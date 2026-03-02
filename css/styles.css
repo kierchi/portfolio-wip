@@ -178,7 +178,6 @@ a:hover {
     background-color: #E0A151;
     padding: 35px 30px;
     border-radius: 8px;
-    position: relative;
 }
 
 .hero-name {
@@ -210,13 +209,39 @@ a:hover {
 }
 
 /* Polaroid Photos */
+.polaroid-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
 .polaroid {
     background-color: #ffffff;
     padding: 12px 12px 35px 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: absolute;
     width: 200px;
-    z-index: 10;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Animation */
+.polaroid-link:hover .polaroid {
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Keep rotation on hover */
+.polaroid-link:hover .polaroid-top {
+    transform: scale(1.05) translateY(-8px) rotate(8deg);
+}
+
+.polaroid-link:hover .polaroid-bottom {
+    transform: scale(1.05) translateY(-8px) rotate(-8deg);
+}
+
+/* Active/Click Animation */
+.polaroid-link:active .polaroid {
+    transform: scale(0.98);
 }
 
 .polaroid img {
@@ -231,18 +256,16 @@ a:hover {
     font-weight: 600;
     margin-top: 12px;
     color: var(--color-text);
-    font-family: 'Brush Script MT', cursive;
+    font-family: "Crafty Girls", cursive;
 }
 
 /* Mobile: Stack polaroids */
 .polaroid-top {
-    position: relative;
     transform: rotate(5deg);
     margin: 0 auto 20px;
 }
 
 .polaroid-bottom {
-    position: relative;
     transform: rotate(-5deg);
     margin: 0 auto 20px;
 }
@@ -288,7 +311,7 @@ a:hover {
     font-weight: bold;
 }
 
-/* Desktop Layout - Match Figma */
+/* Desktop Layout - Polaroids Float Beside Content */
 @media (min-width: 768px) {
     .hero-section {
         padding: 60px 0 80px;
@@ -303,13 +326,14 @@ a:hover {
         position: relative;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 0 260px; /* Space for polaroids */
+        min-height: 500px;
     }
     
     .hero-intro {
-        max-width: 600px;
+        width: 100%;
         padding: 40px 35px;
-        margin-left: 0;
+        margin-bottom: 30px;
     }
     
     .hero-name {
@@ -325,33 +349,37 @@ a:hover {
         line-height: 1.7;
     }
     
-    /* Polaroid - Top Right */
-    .polaroid-top {
+    /* Polaroid - Left Side */
+    .polaroid-link:has(.polaroid-bottom) {
         position: absolute;
-        top: 0;
-        right: 40px;
+        bottom: 60px;
+        left: 0;
+    }
+    
+    .polaroid-bottom {
+        width: 220px;
+        transform: rotate(-8deg);
+        margin: 0;
+    }
+    
+    /* Polaroid - Right Side */
+    .polaroid-link:has(.polaroid-top) {
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+    
+    .polaroid-top {
         width: 220px;
         transform: rotate(8deg);
         margin: 0;
     }
     
-    /* Polaroid - Bottom Left */
-    .polaroid-bottom {
-        position: absolute;
-        bottom: 80px;
-        left: 40px;
-        width: 200px;
-        transform: rotate(-8deg);
-        margin: 0;
-    }
-    
-    /* Skills Box - Bottom Right */
+    /* Skills Box - Below intro */
     .skills-box {
-        position: absolute;
-        bottom: 0;
-        right: 40px;
-        width: 450px;
+        width: 100%;
         padding: 30px;
+        margin: 0;
     }
     
     .skills-grid {
@@ -376,12 +404,12 @@ a:hover {
     
     .hero-content {
         max-width: 1400px;
-        padding: 0 60px;
+        padding: 0 280px;
     }
     
     .hero-intro {
-        max-width: 650px;
         padding: 50px 40px;
+        margin-bottom: 40px;
     }
     
     .hero-name {
@@ -392,21 +420,60 @@ a:hover {
         font-size: 26px;
     }
     
+    .hero-text p {
+        font-size: 17px;
+    }
+    
+    .polaroid-link:has(.polaroid-top) {
+        right: 10px;
+        top: 0;
+    }
+    
     .polaroid-top {
-        right: 60px;
         width: 240px;
     }
     
+    .polaroid-link:has(.polaroid-bottom) {
+        left: 10px;
+        bottom: 80px;
+    }
+    
     .polaroid-bottom {
-        left: 60px;
-        width: 220px;
+        width: 240px;
     }
     
     .skills-box {
-        right: 60px;
-        width: 480px;
+        padding: 35px 40px;
+    }
+    
+    .skills-grid {
+        gap: 40px;
+    }
+    
+    .skills-column h3 {
+        font-size: 22px;
+    }
+    
+    .skills-column ul li {
+        font-size: 17px;
     }
 }
+
+@media (min-width: 1400px) {
+    .hero-content {
+        max-width: 1600px;
+        padding: 0 300px;
+    }
+    
+    .polaroid-link:has(.polaroid-top) {
+        right: 20px;
+    }
+    
+    .polaroid-link:has(.polaroid-bottom) {
+        left: 20px;
+    }
+}
+
 
 /* ================================
    Projects Section
