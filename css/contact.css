@@ -215,20 +215,20 @@ a:hover {
 /* Address Side */
 .postcard-address {
     position: relative;
-    padding-top: 80px; /* Always make room for the stamp */
+    padding-top: 100px; /* Always make room for the stamp */
 }
 
 .postcard-stamp {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 70px;
-    height: 70px;
-    padding: 4px;
+    width: 90px;
+    height: 90px;
+    padding: 5px;
     background-color: white;
-    box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.15),   /* Softer, larger shadow */
-    0 1px 3px rgba(0, 0, 0, 0.1);    /* Sharper, closer shadow */
+    /* Use filter drop-shadow instead of box-shadow - works with clip-path! */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25)) 
+            drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
     /* Jagged edge effect using radial gradients */
     background-image: 
         radial-gradient(circle at 0% 0%, transparent 3px, white 3px),
@@ -245,6 +245,24 @@ a:hover {
         4px 4px;
     background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat;
     /* Alternative: Using clip-path for cleaner jagged edges */
+    clip-path: polygon(
+        5% 0%, 8% 2%, 11% 0%, 14% 2%, 17% 0%, 20% 2%, 23% 0%, 26% 2%, 29% 0%, 32% 2%, 35% 0%, 38% 2%, 41% 0%, 44% 2%, 47% 0%, 50% 2%, 53% 0%, 56% 2%, 59% 0%, 62% 2%, 65% 0%, 68% 2%, 71% 0%, 74% 2%, 77% 0%, 80% 2%, 83% 0%, 86% 2%, 89% 0%, 92% 2%, 95% 0%,
+        98% 5%, 100% 8%, 98% 11%, 100% 14%, 98% 17%, 100% 20%, 98% 23%, 100% 26%, 98% 29%, 100% 32%, 98% 35%, 100% 38%, 98% 41%, 100% 44%, 98% 47%, 100% 50%, 98% 53%, 100% 56%, 98% 59%, 100% 62%, 98% 65%, 100% 68%, 98% 71%, 100% 74%, 98% 77%, 100% 80%, 98% 83%, 100% 86%, 98% 89%, 100% 92%, 98% 95%,
+        95% 100%, 92% 98%, 89% 100%, 86% 98%, 83% 100%, 80% 98%, 77% 100%, 74% 98%, 71% 100%, 68% 98%, 65% 100%, 62% 98%, 59% 100%, 56% 98%, 53% 100%, 50% 98%, 47% 100%, 44% 98%, 41% 100%, 38% 98%, 35% 100%, 32% 98%, 29% 100%, 26% 98%, 23% 100%, 20% 98%, 17% 100%, 14% 98%, 11% 100%, 8% 98%, 5% 100%,
+        2% 95%, 0% 92%, 2% 89%, 0% 86%, 2% 83%, 0% 80%, 2% 77%, 0% 74%, 2% 71%, 0% 68%, 2% 65%, 0% 62%, 2% 59%, 0% 56%, 2% 53%, 0% 50%, 2% 47%, 0% 44%, 2% 41%, 0% 38%, 2% 35%, 0% 32%, 2% 29%, 0% 26%, 2% 23%, 0% 20%, 2% 17%, 0% 14%, 2% 11%, 0% 8%, 2% 5%
+    );
+}
+
+/* Add a subtle inner border for more definition */
+.postcard-stamp::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    pointer-events: none;
     clip-path: polygon(
         5% 0%, 8% 2%, 11% 0%, 14% 2%, 17% 0%, 20% 2%, 23% 0%, 26% 2%, 29% 0%, 32% 2%, 35% 0%, 38% 2%, 41% 0%, 44% 2%, 47% 0%, 50% 2%, 53% 0%, 56% 2%, 59% 0%, 62% 2%, 65% 0%, 68% 2%, 71% 0%, 74% 2%, 77% 0%, 80% 2%, 83% 0%, 86% 2%, 89% 0%, 92% 2%, 95% 0%,
         98% 5%, 100% 8%, 98% 11%, 100% 14%, 98% 17%, 100% 20%, 98% 23%, 100% 26%, 98% 29%, 100% 32%, 98% 35%, 100% 38%, 98% 41%, 100% 44%, 98% 47%, 100% 50%, 98% 53%, 100% 56%, 98% 59%, 100% 62%, 98% 65%, 100% 68%, 98% 71%, 100% 74%, 98% 77%, 100% 80%, 98% 83%, 100% 86%, 98% 89%, 100% 92%, 98% 95%,
@@ -384,13 +402,32 @@ a:hover {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 70px;
-    height: 70px;
-    padding: 4px;
+    width: 90px;
+    height: 90px;
+    padding: 5px;
     background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15),   /* Softer, larger shadow */
-                0 1px 3px rgba(0, 0, 0, 0.1);    /* Sharper, closer shadow */
+    /* Use filter drop-shadow instead of box-shadow - works with clip-path! */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25)) 
+            drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
     /* Jagged edge effect using clip-path */
+    clip-path: polygon(
+        5% 0%, 8% 2%, 11% 0%, 14% 2%, 17% 0%, 20% 2%, 23% 0%, 26% 2%, 29% 0%, 32% 2%, 35% 0%, 38% 2%, 41% 0%, 44% 2%, 47% 0%, 50% 2%, 53% 0%, 56% 2%, 59% 0%, 62% 2%, 65% 0%, 68% 2%, 71% 0%, 74% 2%, 77% 0%, 80% 2%, 83% 0%, 86% 2%, 89% 0%, 92% 2%, 95% 0%,
+        98% 5%, 100% 8%, 98% 11%, 100% 14%, 98% 17%, 100% 20%, 98% 23%, 100% 26%, 98% 29%, 100% 32%, 98% 35%, 100% 38%, 98% 41%, 100% 44%, 98% 47%, 100% 50%, 98% 53%, 100% 56%, 98% 59%, 100% 62%, 98% 65%, 100% 68%, 98% 71%, 100% 74%, 98% 77%, 100% 80%, 98% 83%, 100% 86%, 98% 89%, 100% 92%, 98% 95%,
+        95% 100%, 92% 98%, 89% 100%, 86% 98%, 83% 100%, 80% 98%, 77% 100%, 74% 98%, 71% 100%, 68% 98%, 65% 100%, 62% 98%, 59% 100%, 56% 98%, 53% 100%, 50% 98%, 47% 100%, 44% 98%, 41% 100%, 38% 98%, 35% 100%, 32% 98%, 29% 100%, 26% 98%, 23% 100%, 20% 98%, 17% 100%, 14% 98%, 11% 100%, 8% 98%, 5% 100%,
+        2% 95%, 0% 92%, 2% 89%, 0% 86%, 2% 83%, 0% 80%, 2% 77%, 0% 74%, 2% 71%, 0% 68%, 2% 65%, 0% 62%, 2% 59%, 0% 56%, 2% 53%, 0% 50%, 2% 47%, 0% 44%, 2% 41%, 0% 38%, 2% 35%, 0% 32%, 2% 29%, 0% 26%, 2% 23%, 0% 20%, 2% 17%, 0% 14%, 2% 11%, 0% 8%, 2% 5%
+    );
+}
+
+/* Add a subtle inner border for more definition */
+.info-stamp::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    pointer-events: none;
     clip-path: polygon(
         5% 0%, 8% 2%, 11% 0%, 14% 2%, 17% 0%, 20% 2%, 23% 0%, 26% 2%, 29% 0%, 32% 2%, 35% 0%, 38% 2%, 41% 0%, 44% 2%, 47% 0%, 50% 2%, 53% 0%, 56% 2%, 59% 0%, 62% 2%, 65% 0%, 68% 2%, 71% 0%, 74% 2%, 77% 0%, 80% 2%, 83% 0%, 86% 2%, 89% 0%, 92% 2%, 95% 0%,
         98% 5%, 100% 8%, 98% 11%, 100% 14%, 98% 17%, 100% 20%, 98% 23%, 100% 26%, 98% 29%, 100% 32%, 98% 35%, 100% 38%, 98% 41%, 100% 44%, 98% 47%, 100% 50%, 98% 53%, 100% 56%, 98% 59%, 100% 62%, 98% 65%, 100% 68%, 98% 71%, 100% 74%, 98% 77%, 100% 80%, 98% 83%, 100% 86%, 98% 89%, 100% 92%, 98% 95%,
@@ -593,6 +630,41 @@ a:hover {
 }
 
 /* ================================
+   End Message
+   ================================ */
+.end-message {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.end-message p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.end-message a {
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--color-link);
+}
+
+/* ================================
+   Footer
+   ================================ */
+.footer {
+    background-color: var(--color-bg);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(44, 24, 16, 0.1);
+}
+
+.footer p {
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+/* ================================
    Tablet & Desktop (768px+)
    ================================ */
 @media (min-width: 768px) {
@@ -655,15 +727,15 @@ a:hover {
     
     .postcard-address {
         padding-left: 30px;
-        padding-top: 100px; /* More space on desktop */
+        padding-top: 120px; /* More space on desktop */
     }
     
     /* Postcard Stamps - Desktop Position */
     .postcard-stamp {
         top: 0;
         right: 0;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
     
     .form-fields {
@@ -706,14 +778,14 @@ a:hover {
     
     .info-right {
         padding-left: 30px;
-        padding-top: 100px;
+        padding-top: 120px;
     }
     
     .info-stamp {
         top: 0;
         right: 0;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
     
     .contact-details {
