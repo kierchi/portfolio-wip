@@ -138,8 +138,26 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    padding: 40px 0 60px;
-    background-color: var(--color-bg);
+    padding: 40px 0 60px; /* Back to original padding */
+    background: linear-gradient(to bottom, 
+        var(--color-bg) 0%, 
+        var(--color-bg) 70%, 
+        rgba(245, 243, 240, 0.5) 100%);
+    position: relative;
+}
+
+/* Decorative divider at bottom of hero section */
+.hero-section::after {
+    content: '';
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(44, 24, 16, 0.2) 50%, 
+        transparent 100%);
+    margin: 60px auto 0;
 }
 
 .welcome-title {
@@ -159,7 +177,7 @@ a:hover {
 
 /* Hero Intro Text */
 .hero-intro {
-    background-color: #E0A151;
+    background-color: #d9985a;
     padding: 35px 30px;
     border-radius: 8px;
 }
@@ -287,6 +305,21 @@ a:hover {
     display: none;
 }
 
+/* Fade-out effect at bottom of skills box */
+.skills-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, 
+        transparent, 
+        var(--color-bg));
+    pointer-events: none;
+    border-radius: 0 0 8px 8px;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -323,7 +356,7 @@ a:hover {
 /* Desktop Layout - Polaroids Float Beside Content */
 @media (min-width: 768px) {
     .hero-section {
-        padding: 60px 0 80px;
+        padding: 60px 0 80px; /* Back to original */
     }
     
     .welcome-title {
@@ -512,10 +545,62 @@ a:hover {
 }
 
 /* ================================
+   Featured Work Intro Section
+   ================================ */
+.work-intro {
+    text-align: center;
+    padding: 60px 0 40px;
+    background-color: var(--color-bg);
+}
+
+.work-intro h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--color-text);
+}
+
+.work-intro p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .work-intro {
+        padding: 80px 0 60px;
+    }
+    
+    .work-intro h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .work-intro p {
+        font-size: 18px;
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .work-intro h2 {
+        font-size: 42px;
+    }
+    
+    .work-intro p {
+        font-size: 20px;
+    }
+}
+
+
+/* ================================
    Projects Section
    ================================ */
 .projects-section {
-    padding: 40px 0 60px;
+    padding: 60px 0 60px; /* More top padding for better spacing */
 }
 
 .section-title {
@@ -804,7 +889,7 @@ a:hover {
    ================================ */
 @media (min-width: 1024px) {
     .projects-section {
-        padding: 60px 0 80px;
+        padding: 80px 0 100px; /* More padding on desktop */
     }
     
     .section-title {
