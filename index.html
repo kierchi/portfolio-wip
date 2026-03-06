@@ -14,7 +14,9 @@
     <header class="header">
         <div class="container">
             <a href="#" class="logo">
-                <img src="images/logo/KW-PL-BrownGold.svg" alt="KW" width="40" height="40">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="5" y="30" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2c1810">KW</text>
+                </svg>
             </a>
             <nav class="nav-desktop">
                 <a href="index.html">Works</a>
@@ -36,6 +38,7 @@
                 <h1 class="welcome-title">Welcome Welcome!</h1>
                 
                 <div class="hero-content">
+                    <!-- Orange intro box -->
                     <div class="hero-intro">
                         <h2 class="hero-name">Hello, I'm <span class="highlight">Kaila Wong</span></h2>
                         <p class="hero-subtitle">A <span class="highlight">Graphic Designer</span> from Vancouver!</p>
@@ -51,7 +54,7 @@
                         </div>
                     </div>
                     
-                    <!-- Skills/Tools Box -->
+                    <!-- Skills Box -->
                     <div class="skills-box">
                         <div class="skills-grid">
                             <div class="skills-column">
@@ -77,19 +80,19 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Polaroids AFTER everything else so they stack on top -->
                     <a href="about.html" class="polaroid-link">
                         <div class="polaroid polaroid-top">
-                            <img src="images/misc/kw-pol1.jpg" alt="Kaila Wong" />
-                            <p class="polaroid-caption">Hello!</p>
+                            <img src="/images/misc/kw-pol1.jpg" alt="Kaila Wong" />
+                            <p class="polaroid-caption">Wassup</p>
                         </div>
                     </a>
-
+                    
                     <a href="about.html" class="polaroid-link">
                         <div class="polaroid polaroid-bottom">
-                            <img src="images/misc/kw-pol2.jpg" alt="Kaila Wong" />
-                            <p class="polaroid-caption">Heyyy!!</p>
+                            <img src="/images/misc/kw-pol2.jpg" alt="Kaila Wong" />
+                            <p class="polaroid-caption">Heyyyy</p>
                         </div>
                     </a>
                 </div>
@@ -104,87 +107,109 @@
             </div>
         </section>
 
+        <!-- Featured Projects - Hero + Supporting Layout -->
+        <section class="featured-projects">
+            <div class="container">
+                <!-- Hero Project - Full Width -->
+                <div class="featured-hero">
+                    <article class="featured-card featured-card-hero">
+                        <a href="teeny-me.html">
+                            <div class="featured-image">
+                                <img src="/images/tm/Home Page.png" alt="Teeny Me - A Dress Up Game" />
+                            </div>
+                            <div class="featured-label" style="background-color: #A8454F;">
+                                <h3>Teeny Me</h3>
+                                <p>A Dress Up Game</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Supporting Projects - Two Columns -->
+                <div class="featured-grid">
+                    <!-- Neon Veil -->
+                    <article class="featured-card">
+                        <a href="neon-veil.html">
+                            <div class="featured-image">
+                                <a href="neon-veil.html">
+                                    <img src="images/nv/mainbg.jpg" alt="Neon Veil - A Music Collective" />
+                                </a>
+                            </div>
+                            <div class="featured-label" style="background-color: #7ea4ab;">
+                                <h3>Neon Veil</h3>
+                                <p>A Music Collective</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Marianne's Tea -->
+                    <article class="featured-card">
+                        <a href="project-detail.html">
+                            <div class="featured-image">
+                                <a href="marianne.html">
+                                    <img src="images/mpt/porcelain.jpg" alt="Marianne's Tea - A Tea Company" />
+                                </a>
+                            </div>
+                            <div class="featured-label" style="background-color: #263A84;">
+                                <h3>Marianne's Tea</h3>
+                                <p>A Tea Company</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="projects-section" id="works">
             <div class="container">
                 <h1 class="section-title">Projects</h1>
                 
                 <div class="projects-grid">
-                    <!-- Teeny Me -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <a href="teeny-me.html">
-                                <img src="images/tm/Home Page.png" alt="Teeny Me - A Dress Up Game" />
-                            </a>
-                        </div>
-                        <div class="project-label" style="background-color: #A8454F;">
-                            <h3>Teeny Me</h3>
-                            <p>A Dress Up Game</p>
-                        </div>
-                    </article>
-
-                    <!-- Neon Veil -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <a href="neon-veil.html">
-                                <img src="images/nv/mainbg.jpg" alt="Neon Veil - A Music Collective" />
-                            </a>
-                        </div>
-                        <div class="project-label" style="background-color: #7ea4ab;">
-                            <h3>Neon Veil</h3>
-                            <p>A Music Collective</p>
-                        </div>
-                    </article>
-
-                    <!-- Marianne's Tea -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <a href="marianne.html">
-                                <img src="images/mpt/porcelain.jpg" alt="Marianne's Tea - A Tea Company" />
-                            </a>
-                        </div>
-                        <div class="project-label" style="background-color: #263A84;">
-                            <h3>Marianne's Tea</h3>
-                            <p>A Tea Company</p>
-                        </div>
-                    </article>
-
                     <!-- Logofolio -->
                     <article class="project-card">
-                        <div class="project-image">
-                            <a href="logofolio.html">
-                                <img src="images/logo/KW-PL-BrownGold.svg" alt="Logofolio Showcase" />
-                            </a>
-                        </div>
-                        <div class="project-label" style="background-color: #e07431;">
-                            <h3>Logofolio</h3>
-                            <p>Showcase</p>
-                        </div>
+                        <a href="logofolio.html">
+                            <div class="project-image">
+                                <a href="logofolio.html">
+                                    <img src="images/logo/KW-PL-BrownGold.svg" alt="Logofolio Showcase" />
+                                </a>
+                            </div>
+                            <div class="project-label" style="background-color: #e07431;">
+                                <h3>Logofolio</h3>
+                                <p>Showcase</p>
+                            </div>
+                        </a>
                     </article>
 
                     <!-- Motion Graphics -->
                     <article class="project-card">
-                        <div class="project-image">
-                            <a href="motion-graphics.html">
-                                <img src="images/vid/videoframe_horse.png" alt="Motion Graphics Showcase" />
-                            </a>
-                        </div>
-                        <div class="project-label" style="background-color: #B0CB37;">
-                            <h3>Motion Graphics</h3>
-                            <p>Showcase</p>
-                        </div>
+                        <a href="motion-graphics.html">
+                            <div class="project-image">
+                                <a href="motion-graphics.html">
+                                    <img src="images/vid/videoframe_horse.png" alt="Motion Graphics Showcase" />
+                                </a>
+                            </div>
+                            <div class="project-label" style="background-color: #B0CB37;">
+                                <h3>Motion Graphics</h3>
+                                <p>Showcase</p>
+                            </div>
+                        </a>
                     </article>
 
                     <!-- More to Come -->
                     <article class="project-card project-placeholder">
-                        <div class="project-image">
-                            <a href="wip.html">
-                                <img src="images/misc/Hard-Hat.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="project-label" style="background-color: #E0A151;">
-                            <h3>More to Come!</h3>
-                            <p>Under construction...</p>
-                        </div>
+                        <a href="wip.html">
+                            <div class="project-image">
+                                <div class="placeholder-content">
+                                    <a href="wip.html">
+                                        <img src="images/misc/Hard-Hat.svg" alt="Work In Progress">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-label" style="background-color: #E0A151;">
+                                <h3>More to Come!</h3>
+                                <p>Under construction...</p>
+                            </div>
+                        </a>
                     </article>
                 </div>
 
