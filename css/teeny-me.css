@@ -3,7 +3,7 @@
    ================================ */
 :root {
     /* Colors */
-    --color-bg: #f5f3f0;
+   --color-bg: #f5f3f0;
     --color-header-bg: #A8454F;
     --color-text: #3E2723;
     --color-text-light: #ffffff;
@@ -364,8 +364,10 @@ a:hover {
 }
 
 .wireframe-item img {
+    width: 100%;
     height: 350px;
-    width: auto;
+    object-fit: cover; /* Crop to fit, no squishing */
+    object-position: center; /* Center the crop */
     border-radius: 4px;
     background-color: #e0ddd8;
 }
@@ -709,9 +711,26 @@ a:hover {
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
     
-    /* Wireframes - Grid on Desktop */
+    /* Wireframes - 3x3 Grid on Desktop */
     .wireframes-scroll {
-        display: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for balanced grid */
+        gap: 30px;
+        overflow-x: visible;
+        margin: 0;
+        padding: 40px 0;
+        justify-items: center; /* Center items in their cells */
+    }
+    
+    .wireframe-item {
+        width: 100%;
+        max-width: 350px; /* Constrain max width */
+        scroll-snap-align: unset;
+    }
+    
+    .wireframe-item img {
+        max-height: 400px; /* Don't get too tall on desktop */
+        height: auto;
     }
     
     .wireframes-grid {
@@ -817,5 +836,297 @@ a:hover {
     
     .project-section {
         margin-bottom: 80px;
+    }
+}
+
+/* ================================
+   App Preview Section
+   ================================ */
+.app-preview-section {
+    background-color: var(--color-bg);
+}
+
+.app-screens-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0 30px;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Hide scrollbar but keep functionality */
+.app-screens-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.app-screens-scroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.app-screens-scroll::-webkit-scrollbar-thumb {
+    background: rgba(168, 69, 79, 0.5);
+    border-radius: 10px;
+}
+
+.app-screens-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 69, 79, 0.7);
+}
+
+.app-screens-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 69, 79, 0.5) rgba(0, 0, 0, 0.1);
+}
+
+.phone-mockup {
+    flex: 0 0 auto;
+    width: 280px;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+}
+
+.phone-mockup img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 19.5; /* iPhone aspect ratio */
+    object-fit: cover;
+    border-radius: 36px; /* App Store style rounded corners */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15),
+                0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.phone-mockup:hover {
+    transform: scale(1.03);
+}
+
+.phone-mockup:active {
+    transform: scale(0.98);
+}
+
+/* Desktop - 3x2 Grid Layout */
+@media (min-width: 768px) {
+    .app-screens-scroll {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 30px;
+        overflow-x: visible;
+        margin: 0;
+        padding: 40px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .phone-mockup {
+        width: 100%;
+        scroll-snap-align: unset;
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-screens-scroll {
+        gap: 40px; /* Just increase gap, keep 3 columns */
+    }
+    
+    .phone-mockup img {
+        border-radius: 42px; /* Larger rounded corners on desktop */
+    }
+}
+
+/* ================================
+   New Restructured Sections
+   ================================ */
+
+/* Hero Section - Teeny Me Specific */
+.hero-section-tm {
+    padding: 40px 0 60px;
+    text-align: center;
+}
+
+.project-tagline {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text);
+    opacity: 0.85;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+/* Concept Section */
+.concept-section-tm .section-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.concept-section-tm p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Design Process Section */
+.design-process-section {
+    background-color: rgba(245, 243, 240, 0.5);
+    padding: 60px 0;
+    margin: 60px 0;
+}
+
+.process-subsection {
+    margin-bottom: 60px;
+}
+
+.process-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.subsection-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.subsection-description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+    opacity: 0.85;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #a8454f;
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    opacity: 0.85;
+}
+
+/* Vision Section */
+.vision-section {
+    background-color: #f9f8f6;
+    padding: 60px 0;
+    margin: 60px 0;
+}
+
+.vision-content .section-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vision-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Demo Section */
+.demo-section {
+    padding: 60px 0;
+}
+
+.video-subsection {
+    margin-bottom: 60px;
+}
+
+.demo-link-section {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(139, 79, 71, 0.05);
+    border-radius: 12px;
+}
+
+.demo-link-section h3 {
+    margin-bottom: 16px;
+}
+
+.demo-link-section p {
+    margin-bottom: 24px;
+    color: var(--color-text);
+    opacity: 0.85;
+}
+
+.demo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background-color: #A8454F;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.demo-button:hover {
+    background-color: #A8454F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 79, 71, 0.3);
+}
+
+.demo-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .project-tagline {
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+    
+    .subsection-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+    
+    .feature-item h3 {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
     }
 }

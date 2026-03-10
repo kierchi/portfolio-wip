@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Itim&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/teeny-me.css">
 </head>
 <body>
@@ -31,177 +33,220 @@
 
     <main class="project-detail">
         <div class="container">
-            <!-- Project Title -->
-            <h1 class="project-title">Teeny Me</h1>
+            
+            <!-- 1. HERO SECTION -->
+            <section class="hero-section-tm">
+                <h1 class="project-title">Teeny Me</h1>
+                <p class="project-tagline">A creative dress-up game where you design your avatar, style outfits, and build your dream space</p>
+                
+                <div class="hero-image">
+                    <img src="images/tm/TeenyMeHomescreenPinkFinal.png" alt="Teeny Me - Dress up game interface" />
+                </div>
+            </section>
 
-            <!-- Hero Image -->
-            <div class="hero-image">
-                <img src="images/tm/TeenyMeHomescreenPinkFinal.png" alt="Teeny Me - Dress up game interface" />
-            </div>
-
-            <!-- What is it Section -->
-            <section class="project-section intro-section">
+            <!-- 2. THE CONCEPT (What is it?) -->
+            <section class="project-section concept-section-tm">
                 <div class="section-header">
-                    <h2>What is it?</h2>
-                    <p class="section-subtitle">A Dress Up Game</p>
+                    <h2>The Concept</h2>
                 </div>
                 <div class="section-content">
-                    <p>Teeny Me is a dress up game for mobile devices. It originally started off a school project where we had to design a UI.</p>
-                    <p>I drew inspiration from my childhood, going on the Dressupgames.com or Doll Divine. And since I consider myself an artist I wanted to draw the assets myself.</p>
-                    <p>I've made a "playable" demo although it's quite rough around the edges.</p>
+                    <p>Teeny Me is a mobile dress-up game that brings back the joy of childhood creativity. It started as a school UI design project, but grew into something I'm passionate about turning into a real game.</p>
+                    
+                    <p>I drew inspiration from the dress-up games I loved as a kid—sites like Dressupgames.com and Doll Divine. As an artist, I wanted to create something authentic by drawing all the game assets myself, giving it a personal, hand-crafted feel.</p>
+                    
+                    <p>I've built a rough playable demo that shows the core mechanics, and I'm excited about the potential to develop this further.</p>
                 </div>
             </section>
 
-            <!-- Promotional Video -->
-            <section class="project-section">
-                <h2 class="section-title">Promotional Video</h2>
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.3)"/>
-                            <path d="M32 25 L32 55 L57 40 Z" fill="rgba(255,255,255,0.8)"/>
+            <!-- 3. GAME PREVIEW (6 artboards/screenshots) -->
+            <section class="project-section app-preview-section">
+                <h2 class="section-title">Game Preview</h2>
+                <div class="app-screens-scroll">
+                    <div class="phone-mockup clickable-item">
+                        <img src="/api/placeholder/400/800" alt="Teeny Me - Home Screen" />
+                    </div>
+                    <div class="phone-mockup clickable-item">
+                        <img src="/api/placeholder/400/800" alt="Teeny Me - Character Creator" />
+                    </div>
+                    <div class="phone-mockup clickable-item">
+                        <img src="/api/placeholder/400/800" alt="Teeny Me - Outfit Selection" />
+                    </div>
+                    <div class="phone-mockup clickable-item">
+                        <img src="/api/placeholder/400/800" alt="Teeny Me - Mix & Match" />
+                    </div>
+                    <div class="phone-mockup clickable-item">
+                        <img src="/api/placeholder/400/800" alt="Teeny Me - Avatar Care" />
+                    </div>
+                    <div class="phone-mockup clickable-item">
+                        <img src="/api/placeholder/400/800" alt="Teeny Me - Dream Room Design" />
+                    </div>
+                </div>
+                <div class="section-description">
+                    <p>Create your own unique avatar, mix and match endless outfit combinations, design your dream room, and take care of your virtual character in this creative and expressive experience.</p>
+                </div>
+            </section>
+
+            <!-- 4. DESIGN PROCESS -->
+            <section class="project-section design-process-section">
+                <h2 class="section-title">Design Process</h2>
+                
+                <!-- Concept Art -->
+                <div class="process-subsection">
+                    <h3 class="subsection-title">Concept Art</h3>
+                    <div class="concept-art-scroll">
+                        <div class="concept-art-item clickable-item">
+                            <img src="images/tm/Teeny_Me_Avatar.png" alt="Character concept 1" />
+                        </div>
+                        <div class="concept-art-item clickable-item">
+                            <img src="images/tm/blankbody.png" alt="Character concept 2" />
+                        </div>
+                        <div class="concept-art-item clickable-item">
+                            <img src="images/tm/teena.jpg" alt="Character concept 3" />
+                        </div>
+                    </div>
+                    <p class="subsection-description">Early character designs exploring different styles, expressions, and outfit possibilities. Each character was hand-drawn to capture a unique personality and aesthetic.</p>
+                </div>
+
+                <!-- Wireframes (Collapsible/Optional) -->
+                <div class="process-subsection wireframes-subsection">
+                    <h3 class="subsection-title">Wireframes & Layout Design</h3>
+                    <div class="wireframes-scroll">
+                        <div class="wireframe-item clickable-item">
+                            <img src="/images/tm/wireframe1.png" alt="Wireframe 1" />
+                        </div>
+                        <div class="wireframe-item clickable-item">
+                            <img src="/images/tm/wireframe2.png" alt="Wireframe 2" />
+                        </div>
+                        <div class="wireframe-item clickable-item">
+                            <img src="/images/tm/wireframe3.png" alt="Wireframe 3" />
+                        </div>
+                        <div class="wireframe-item clickable-item">
+                            <img src="/images/tm/wireframe4.png" alt="Wireframe 4" />
+                        </div>
+                        <div class="wireframe-item clickable-item">
+                            <img src="/images/tm/wireframe5.png" alt="Wireframe 5" />
+                        </div>
+                        <div class="wireframe-item clickable-item">
+                            <img src="/images/tm/wireframe6.png" alt="Wireframe 6" />
+                        </div>
+                        <div class="wireframe-item clickable-item">
+                            <img src="/images/tm/wireframe7.png" alt="Wireframe 7" />
+                        </div>
+                    </div>
+                    <p class="subsection-description">Exploring the app's information architecture and user flow through low-fidelity wireframes.</p>
+                </div>
+
+                <!-- Figma Prototype -->
+                <div class="process-subsection">
+                    <h3 class="subsection-title">Figma Prototype</h3>
+                    <div class="image-grid grid-1">
+                        <div class="grid-item clickable-item">
+                            <iframe style="border: 3px solid #A8454F;" width="100%" height="750" src="https://embed.figma.com/proto/aapGR2Z4GXRQnxnzQyjiXq/Teeny-Me---Hifi-Prototype--WIP-?page-id=8%3A16&node-id=9-18&p=f&viewport=529%2C473%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A18&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <p class="subsection-description">Interactive prototype showcasing the final UI design, navigation flow, and user interactions.</p>
+                </div>
+            </section>
+
+            <!-- 5. FEATURES (Game Mechanics) -->
+            <section class="project-section features-section">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="20" r="12" stroke="#8b4f47" stroke-width="2" fill="none"/>
+                                <path d="M15 50 Q30 40 45 50" stroke="#8b4f47" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Create Your Avatar</h3>
+                        <p>Design a unique character with customizable features, expressions, and accessories</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="15" width="30" height="35" rx="2" stroke="#8b4f47" stroke-width="2" fill="none"/>
+                                <circle cx="30" cy="28" r="5" stroke="#8b4f47" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Mix & Match Outfits</h3>
+                        <p>Endless clothing combinations to express your personal style</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="20" width="40" height="30" rx="2" stroke="#8b4f47" stroke-width="2" fill="none"/>
+                                <rect x="20" y="30" width="8" height="12" stroke="#8b4f47" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Design Your Room</h3>
+                        <p>Decorate and customize your avatar's living space with furniture and decor</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30 15 L35 25 L45 25 L37 32 L40 42 L30 35 L20 42 L23 32 L15 25 L25 25 Z" stroke="#8b4f47" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Take Care of Your Avatar</h3>
+                        <p>Feed, play with, and nurture your character to keep them happy</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. THE VISION (Future Plans) -->
+            <section class="project-section vision-section">
+                <div class="vision-content">
+                    <h2 class="section-title">The Vision</h2>
+                    <div class="section-content">
+                        <p>Teeny Me started as a class project, but it's grown into something I'm passionate about developing into a full mobile game. The positive feedback on the concept and art style has motivated me to continue building it out.</p>
+                        
+                        <p>I'm currently working on expanding the asset library, refining the gameplay mechanics, and improving the overall user experience. My goal is to create a game that captures the creativity and joy of classic dress-up games while bringing something fresh and personal to the genre.</p>
+                        
+                        <p>If you're interested in collaborating or learning more about the project, I'd love to hear from you!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. DEMO & VIDEO -->
+            <section class="project-section demo-section">
+                <h2 class="section-title">Check It Out</h2>
+                
+                <!-- Promotional Video -->
+                <div class="video-subsection">
+                    <h3 class="subsection-title">Promotional Video</h3>
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.3)"/>
+                                <path d="M32 25 L32 55 L57 40 Z" fill="rgba(255,255,255,0.8)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="subsection-description">A quick look at the game's core features and creative possibilities.</p>
+                </div>
+
+                <!-- Playable Demo Link -->
+                <div class="demo-link-section">
+                    <h3 class="subsection-title">Playable Demo</h3>
+                    <p>Want to try it yourself? The demo is still rough around the edges, but it shows the core gameplay mechanics.</p>
+                    <a href="#" class="demo-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5v14l11-7z" fill="currentColor"/>
                         </svg>
-                    </div>
-                </div>
-                <div class="section-description">
-                    <p>Lorem ipsum dolor sit amet consectetur. At sit auctor enim risus lectus. Quis odio quismod turpis tortor arcu ut condimentum. Interdum proin fringilla tempor eros in tellus egestas urna lectus. Ut egestas vitae viverra sed faucibus.</p>
-                </div>
-            </section>
-
-            <!-- Figma Prototype -->
-            <section class="project-section">
-                <h2 class="section-title">Figma Prototype</h2>
-                <div class="image-grid grid-1">
-                    <div class="grid-item">
-                        <iframe style="border: 3px solid #A8454F;" width="100%" height="750" src="https://embed.figma.com/proto/aapGR2Z4GXRQnxnzQyjiXq/Teeny-Me---Hifi-Prototype--WIP-?page-id=8%3A16&node-id=9-18&p=f&viewport=529%2C473%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A18&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Concept Art - Horizontal Scroll on Mobile -->
-            <section class="project-section concept-art-section">
-                <h2 class="section-title">Concept Art</h2>
-                <div class="concept-art-scroll">
-                    <div class="concept-art-item clickable-item">
-                        <img src="images/tm/blankbody.png" alt="Character concept 1" />
-                    </div>
-                    <div class="concept-art-item clickable-item">
-                        <img src="images/tm/Teeny_Me_Avatar.png" alt="Character concept 2" />
-                    </div>
-                    <div class="concept-art-item clickable-item">
-                        <img src="images/tm/teena.jpg" alt="Character concept 3" />
-                    </div>
-                </div>
-                <div class="section-description">
-                    <p>Lorem ipsum dolor sit amet consectetur. Mauris semper leo nulla maecenas aliquet eleifend sit. Porttitor et phasellus pellentesque ultrices dui consequat massa enim. Duis urna orci netus amet id velit. Et aliquam vestibulum vel cet. Sit vulputate aliquet nunc imperdiet eget. Duis sit sagittis pharetra scelerisque. Nisi mattis semper vestibulum tempor ut orci. Volutpat vitae at orci quis in. Maecenas urna eget ante odio non quis et massa. Elementum non nisi pharetra lectus ornare.</p>
-                </div>
-            </section>
-
-            <!-- Wireframes -->
-            <section class="project-section wireframes-section">
-                <h2 class="section-title">Wireframes</h2>
-                <div class="wireframes-scroll">
-                    <div class="wireframe-item clickable-item">
-                        <img src="images/tm/wireframe1.png" alt="Wireframe 1" />
-                    </div>
-                    <div class="wireframe-item clickable-item">
-                        <img src="images/tm/wireframe2.png" alt="Wireframe 2" />
-                    </div>
-                    <div class="wireframe-item clickable-item">
-                        <img src="images/tm/wireframe3.png" alt="Wireframe 3" />
-                    </div>
-                    <div class="wireframe-item clickable-item">
-                        <img src="images/tm/wireframe4.png" alt="Wireframe 4" />
-                    </div>
-                    <div class="wireframe-item clickable-item">
-                        <img src="images/tm/wireframe5.png" alt="Wireframe 5" />
-                    </div>
-                    <div class="wireframe-item clickable-item">
-                        <img src="images/tm/wireframe6.png" alt="Wireframe 6" />
-                    </div>
-                    <div class="wireframe-item clickable-item">
-                        <img src="images/tm/wireframe7.png" alt="Wireframe 7" />
-                    </div>
-                </div>
-                <div class="wireframes-grid desktop-wireframes">
-                    <div class="wireframe-group clickable-item">
-                        <img src="images/tm/wireframe1.png" alt="Wireframe grid 1" />
-                    </div>
-                    <div class="wireframe-group clickable-item">
-                        <img src="images/tm/wireframe2.png" alt="Wireframe grid 2" />
-                    </div>
-                    <div class="wireframe-group clickable-item">
-                        <img src="images/tm/wireframe3.png" alt="Wireframe grid 3" />
-                    </div>
-                    <div class="wireframe-group clickable-item">
-                        <img src="images/tm/wireframe4.png" alt="Wireframe grid 4" />
-                    </div>
-                    <div class="wireframe-group clickable-item">
-                        <img src="images/tm/wireframe5.png" alt="Wireframe grid 5" />
-                    </div>
-                    <div class="wireframe-group clickable-item">
-                        <img src="images/tm/wireframe6.png" alt="Wireframe grid 6" />
-                    </div>
-                    <div class="wireframe-group clickable-item">
-                        <img src="images/tm/wireframe7.png" alt="Wireframe grid 6" />
-                    </div>
-                </div>
-                
-                <!-- Additional Wireframe Row (Desktop) -->
-                <!-- <div class="wireframes-grid-row desktop-wireframes">
-                    <div class="wireframe-row-item clickable-item">
-                        <img src="/api/placeholder/300/400" alt="Wireframe detail 1" />
-                    </div>
-                    <div class="wireframe-row-item clickable-item">
-                        <img src="/api/placeholder/300/400" alt="Wireframe detail 2" />
-                    </div>
-                    <div class="wireframe-row-item clickable-item">
-                        <img src="/api/placeholder/300/400" alt="Wireframe detail 3" />
-                    </div>
-                    <div class="wireframe-row-item clickable-item">
-                        <img src="/api/placeholder/300/400" alt="Wireframe detail 4" />
-                    </div>
-                </div> -->
-                
-                <div class="section-description">
-                    <p>Lorem ipsum dolor sit amet consectetur. Mauris semper leo nulla maecenas aliquet eleifend sit. Porttitor et phasellus pellentesque ultrices dui consequat massa enim. Duis urna orci netus amet id velit. Et aliquam vestibulum vel cet. Sit vulputate aliquet nunc imperdiet eget. Duis sit sagittis pharetra scelerisque.</p>
-                </div>
-            </section>
-
-            <!-- Promotional Materials -->
-            <section class="project-section">
-                <h2 class="section-title">Promotional Materials</h2>
-                <div class="promo-scroll">
-                    <div class="promo-item clickable-item">
-                        <img src="images/tm/Newsletter.png" alt="Promotional material 1" />
-                    </div>
-                    <div class="promo-item clickable-item">
-                        <img src="/api/placeholder/400/500" alt="Promotional material 2" />
-                    </div>
-                    <div class="promo-item clickable-item">
-                        <img src="/api/placeholder/400/500" alt="Promotional material 3" />
-                    </div>
-                </div>
-                <div class="section-description">
-                    <p>Lorem ipsum dolor sit amet consectetur. Egestas nullam eget mollis ut sed facilisi amet vitae. Etiam commodo nibh semper ante convallis quis ut lacus ante. Duis lacus justo velit convallis rhoncus dignissim dis. Nunc a habitant dis. Lorem ornare imperdiet nisi erat eget luctus lectus turpis nisi nulla ac. Duis nulla eu nisi cras molestie ut id. In nibh sit duis mauris venenatis id faucibus.</p>
+                        Play Demo
+                    </a>
                 </div>
             </section>
 
             <!-- End Message -->
             <div class="end-message">
-                <p>You've reached the end!</p>
-                <p>Wanna hire me? <a href="contact.html">Go here!</a></p>
+                <p>Thanks for checking out Teeny Me!</p>
+                <p>Want to see more work? <a href="index.html">Back to portfolio</a></p>
             </div>
-
-            <!-- Project Navigation -->
-            <nav class="project-nav">
-                <a href="motion-graphics.html" class="nav-link prev-link">
-                    <span class="nav-arrow">‹</span> Previous Project
-                </a>
-                <a href="neon-veil.html" class="nav-link next-link desktop-only">
-                    Next Project <span class="nav-arrow">›</span>
-                </a>
-            </nav>
         </div>
     </main>
 
