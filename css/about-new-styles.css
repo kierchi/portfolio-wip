@@ -1,4 +1,28 @@
 /* ================================
+   CSS Variables
+   ================================ */
+:root {
+    /* Colors */
+    --color-bg: #f5f3f0;
+    --color-header-bg: #E8A050; /* Yellow/Orange nav */
+    --color-text: #2c1810;
+    --color-text-light: #ffffff;
+    --color-link: #4259BD;
+    
+    /* Spacing */
+    --margin: 20px;
+    --gutter: 20px;
+}
+
+/* ================================
+   Header Override - Yellow Background
+   ================================ */
+.header {
+    background-color: var(--color-header-bg) !important;
+    border-bottom: none !important;
+}
+
+/* ================================
    About Page - Redesigned
    ================================ */
 
@@ -217,7 +241,7 @@
 }
 
 .procreate {
-    background: linear-gradient(135deg, #917979 0%, #2f3f4a 100%);
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
 }
 
 .figma {
@@ -291,7 +315,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background-color: #E0A151;
+    background-color: var(--color-header-bg);
     color: #ffffff;
     padding: 18px 40px;
     border-radius: 12px;
@@ -305,7 +329,7 @@
 }
 
 .resume-btn:hover {
-    background-color: #E0A151;
+    background-color: #8b4f47;
     transform: translateY(-4px);
     box-shadow: 0 10px 30px rgba(168, 69, 79, 0.35);
 }
