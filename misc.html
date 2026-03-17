@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misc | Kaila Wong</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/misc.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo/KW-PL-BrownWhite.svg" alt="KW" width="40" height="40">
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html">Works</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="files/KailaWongResume.pdf" target="_blank">Resume</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="misc-page">
+        <div class="container">
+            
+            <!-- Page Title -->
+            <h1 class="page-title">Misc</h1>
+            <p class="page-subtitle">A collection of random things I've made, photos I've taken, and creative experiments</p>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/miscmisc/CanadaDRY.JPG" alt="Kaila drinking Canada Dry" />
+                    </div>
+                    <h3 class="photo-title">Sip Sip</h3>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/misc/photo2.jpg" alt="Gallery item 2" />
+                    </div>
+                    <h3 class="photo-title">Another Cool Thing</h3>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/misc/photo3.jpg" alt="Gallery item 3" />
+                    </div>
+                    <h3 class="photo-title">Random Experiment</h3>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/miscmisc/ppskillet.jpg" alt="Pulled Pork Skillet" />
+                    </div>
+                    <h3 class="photo-title">Food Photography</h3>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/miscmisc/ObeyMeCharSheet.PNG" alt="Character Sheet" />
+                    </div>
+                    <h3 class="photo-title">Digital Art</h3>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/miscmisc/sketch.JPG" alt="Work in progress artwork" />
+                    </div>
+                    <h3 class="photo-title">Sketch Study</h3>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/miscmisc/oregonbeach.jpg" alt="Oregon Beach" />
+                    </div>
+                    <h3 class="photo-title">Photography</h3>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="images/miscmisc/IRL_Redraw.png" alt="Redraw of Kaila" />
+                    </div>
+                    <h3 class="photo-title">Illustration</h3>
+                </div>
+
+                <!-- Add more items as needed - just copy paste this structure -->
+                
+            </div>
+
+            <!-- End Message -->
+            <div class="end-message">
+                <p>That's all for now!</p>
+                <p><a href="index.html">Back to portfolio</a></p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright © 2026 | Kaila Wong</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.photo-frame img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>
