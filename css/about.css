@@ -87,7 +87,8 @@ a:hover {
     align-items: center;
 }
 
-.logo svg {
+.logo svg,
+.logo img {
     display: block;
 }
 
@@ -103,7 +104,7 @@ a:hover {
 }
 
 .nav-desktop a {
-    color: white;
+    color: var(--color-text);
     font-weight: 500;
     position: relative;
 }
@@ -115,7 +116,7 @@ a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: white;
+    background-color: var(--color-text);
     transition: width 0.3s ease;
 }
 
@@ -146,178 +147,309 @@ a:hover {
 }
 
 /* ================================
-   About Page
+   Hero Section - Full-width image with overlay
    ================================ */
-.about-page {
-    padding: 30px 0 60px;
+.about-hero {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.page-title {
-    font-size: 24px;
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.35) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff !important;
+    opacity: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text .hero-subtitle {
+    color: #ffffff !important;
+}
+
+/* ================================
+   Intro Section
+   ================================ */
+.about-intro {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.intro-large {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.about-intro p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.about-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* ================================
+   Section Title (Shared)
+   ================================ */
+.section-title {
+    font-size: 32px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: var(--color-text);
-    line-height: 1.3;
 }
 
 /* ================================
-   Hero Image
+   Skills Section
    ================================ */
-.hero-image {
-    margin-bottom: 30px;
-    overflow: hidden;
-    border-radius: 4px;
+.skills-section {
+    padding: 80px 20px;
+    background-color: #f9f8f6;
+    margin: 60px 0;
 }
 
-.hero-image img {
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    color: var(--color-header-bg);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+.skill-icon svg {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
-/* ================================
-   Who is she? Banner
-   ================================ */
-.who-banner {
-    background-color: var(--color-banner);
-    color: var(--color-text);
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 4px;
-}
-
-.who-banner h2 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-.who-banner .subtitle {
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-/* ================================
-   Introduction Section
-   ================================ */
-.intro-section {
-    margin-bottom: 40px;
-}
-
-.intro-section p {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.intro-section p:last-child {
-    margin-bottom: 0;
-}
-
-.intro-text {
+.skill-item h3 {
+    font-size: 16px;
     font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
 }
 
 /* ================================
-   Content Divider
+   Tools Section
    ================================ */
-.content-divider {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(44, 24, 16, 0.2), transparent);
-    margin: 40px 0;
+.tools-section {
+    padding: 80px 20px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tool-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tool-item:hover {
+    transform: translateY(-8px);
+}
+
+.tool-icon-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-icon-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.tool-item:hover .tool-icon-img {
+    transform: scale(1.1);
+}
+
+.tool-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text);
 }
 
 /* ================================
-   Additional Content
+   Interests Section
    ================================ */
-.additional-content {
-    margin-bottom: 40px;
+.interests-section {
+    padding: 80px 20px;
+    background-color: #f9f8f6;
+    margin: 60px 0;
 }
 
-.additional-content p {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.additional-content p:last-child {
-    margin-bottom: 0;
-}
-
-/* ================================
-   Skills, Software & Interests Grid
-   ================================ */
-.info-grid {
+.interests-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    margin-bottom: 40px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.info-column h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.interest-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    color: var(--color-header-bg);
+}
+
+.interest-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.interest-item h3 {
+    font-size: 16px;
+    font-weight: 600;
     color: var(--color-text);
-}
-
-.info-column ul {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.info-column ul li {
-    font-size: 15px;
-    line-height: 1.8;
-    position: relative;
-}
-
-.info-column ul li::before {
-    content: '•';
-    position: absolute;
-    left: -15px;
-    color: var(--color-text);
+    margin: 0;
 }
 
 /* ================================
-   Other Content Section
+   Resume Section
    ================================ */
-.other-content {
-    margin-bottom: 40px;
+.resume-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 60px 0;
 }
 
-.other-content h3 {
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--color-header-bg);
+    color: #ffffff;
+    padding: 18px 40px;
+    border-radius: 12px;
     font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(224, 161, 81, 0.25);
+    border: none;
+    cursor: pointer;
 }
 
-.other-content p {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 16px;
+.resume-btn:hover {
+    background-color: #c98a42;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(224, 161, 81, 0.35);
+    opacity: 1;
 }
 
-.other-content p:last-child {
-    margin-bottom: 0;
+.resume-btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(224, 161, 81, 0.25);
 }
 
-/* ================================
-   Final Content
-   ================================ */
-.final-content {
-    margin-bottom: 40px;
-}
-
-.final-content p {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.final-content p:last-child {
-    margin-bottom: 0;
+.resume-btn svg {
+    flex-shrink: 0;
 }
 
 /* ================================
@@ -325,19 +457,20 @@ a:hover {
    ================================ */
 .end-message {
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
     margin-bottom: 40px;
 }
 
 .end-message p {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 12px;
 }
 
 .end-message a {
     font-weight: 600;
     text-decoration: underline;
     color: var(--color-link);
+    font-size: 18px;
 }
 
 /* ================================
@@ -488,86 +621,115 @@ a:hover {
         display: none;
     }
     
-    /* Page Title */
-    .page-title {
-        font-size: 48px;
-        margin-bottom: 40px;
-        color: var(--color-accent);
+    /* Hero */
+    .hero-image-container {
+        height: 70vh;
+        max-height: 700px;
     }
     
-    /* Hero Image */
-    .hero-image {
-        margin-bottom: 40px;
-    }
-    
-    /* Who Banner */
-    .who-banner {
-        padding: 25px 30px;
-        margin-bottom: 40px;
-    }
-    
-    .who-banner h2 {
-        font-size: 24px;
-        margin-bottom: 6px;
-    }
-    
-    .who-banner .subtitle {
-        font-size: 16px;
-    }
-    
-    /* Introduction Section */
-    .intro-section {
-        margin-bottom: 50px;
-    }
-    
-    .intro-section p {
-        font-size: 16px;
-        margin-bottom: 18px;
-    }
-    
-    /* Content Divider */
-    .content-divider {
-        margin: 50px 0;
-    }
-    
-    /* Additional Content */
-    .additional-content {
-        margin-bottom: 50px;
-    }
-    
-    .additional-content p {
-        font-size: 16px;
-        margin-bottom: 18px;
-    }
-    
-    /* Info Grid - 3 Columns */
-    .info-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin-bottom: 50px;
-    }
-    
-    .info-column h3 {
-        font-size: 20px;
+    .hero-text h1 {
+        font-size: 56px;
         margin-bottom: 16px;
     }
     
-    .info-column ul li {
-        font-size: 16px;
+    .hero-subtitle {
+        font-size: 24px;
     }
     
-    /* Final Content */
-    .final-content {
-        margin-bottom: 50px;
+    /* Intro */
+    .about-intro {
+        margin: 80px auto;
     }
     
-    .final-content p {
-        font-size: 16px;
-        margin-bottom: 18px;
+    .intro-large {
+        font-size: 24px;
+        line-height: 1.8;
+        margin-bottom: 40px;
     }
     
-    .end-message p {
+    .about-intro p {
         font-size: 18px;
+        line-height: 1.9;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+    
+    /* Skills Grid - 3 columns on desktop */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+    
+    .skill-item {
+        padding: 40px 30px;
+    }
+    
+    .skill-icon {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 24px;
+    }
+    
+    .skill-item h3 {
+        font-size: 18px;
+    }
+    
+    /* Tools Grid */
+    .tools-grid {
+        gap: 40px;
+    }
+    
+    .tool-icon-img {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .tool-name {
+        font-size: 14px;
+    }
+    
+    /* Interests Grid - 2 columns */
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .interest-item {
+        padding: 30px;
+    }
+    
+    .interest-icon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .interest-item h3 {
+        font-size: 17px;
+    }
+    
+    /* Resume Button */
+    .resume-section {
+        padding: 80px 20px;
+        margin: 80px 0;
+    }
+    
+    .resume-btn {
+        font-size: 20px;
+        padding: 20px 50px;
+        border-radius: 14px;
+    }
+    
+    /* End Message */
+    .end-message p {
+        font-size: 20px;
+    }
+    
+    .end-message a {
+        font-size: 20px;
     }
 }
 
@@ -575,82 +737,14 @@ a:hover {
    Large Desktop (1024px+)
    ================================ */
 @media (min-width: 1024px) {
-    .about-page {
-        padding: 50px 0 80px;
+    .hero-image-container {
+        height: 80vh;
+        max-height: 800px;
     }
     
-    .page-title {
-        font-size: 56px;
-        margin-bottom: 50px;
-    }
-    
-    .hero-image {
-        margin-bottom: 50px;
-    }
-}
-
-/* ================================
-   List Items - Desktop Only
-   ================================ */
-@media (min-width: 768px) {
-    .info-column ul li.desktop-only {
-        display: list-item;
-    }
-}
-
-@media (max-width: 767px) {
-    .info-column ul li.desktop-only {
-        display: none;
-    }
-}
-
-/* ================================
-   Resume Download Section
-   ================================ */
-.resume-section {
-    text-align: center;
-    padding: 40px 0;
-    margin: 40px 0;
-}
-
-.resume-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background-color: var(--color-header-bg);
-    color: #ffffff;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(168, 69, 79, 0.2);
-}
-
-.resume-btn:hover {
-    background-color: #E0A151;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(168, 69, 79, 0.3);
-}
-
-.resume-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(168, 69, 79, 0.2);
-}
-
-.resume-btn svg {
-    flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-    .resume-section {
-        padding: 50px 0;
-        margin: 50px 0;
-    }
-    
-    .resume-btn {
-        font-size: 20px;
-        padding: 18px 40px;
+    .skills-section,
+    .tools-section,
+    .interests-section {
+        padding: 100px 20px;
     }
 }
