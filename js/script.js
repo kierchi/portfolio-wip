@@ -122,6 +122,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ================================
+    // Hero Parallax (About Page)
+    // ================================
+    const heroImg = document.querySelector('.hero-image-container img, .hero-background img');
+    if (heroImg) {
+        function updateParallax() {
+            heroImg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+        }
+        window.addEventListener('scroll', updateParallax, { passive: true });
+        updateParallax();
+    }
+
+    // ================================
     // Skills Box Toggle (Homepage)
     // ================================
     const skillsBox = document.querySelector('.skills-box');
