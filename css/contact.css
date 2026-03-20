@@ -76,7 +76,7 @@ a:hover {
    Header & Navigation
    ================================ */
 .header {
-    background-color: var(--color-header-bg);
+    background-color: var(--color-header-actual);
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -105,7 +105,7 @@ a:hover {
 }
 
 .nav-desktop a {
-    color: var(--color-text-light);
+    color: var(--color-nav-text);
     font-weight: 500;
     position: relative;
 }
@@ -117,7 +117,7 @@ a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-text-light);
+    background-color: var(--color-nav-text);
     transition: width 0.3s ease;
 }
 
@@ -139,7 +139,7 @@ a:hover {
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background-color: var(--color-text-light);
+    background-color: var(--color-nav-text);
     transition: all 0.3s ease;
 }
 

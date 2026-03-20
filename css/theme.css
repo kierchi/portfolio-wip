@@ -1,0 +1,98 @@
+/* ================================
+   Color Theme System
+   ================================ */
+
+/* Default: cream/white header, dark nav text */
+:root {
+    --color-header-actual: #f5f3f0;
+    --color-nav-text: #3E2723;
+    --color-header-border: rgba(44, 24, 16, 0.1);
+}
+
+/* Theme overrides — html[attr] specificity beats :root */
+html[data-color-theme="default"] {
+    --color-header-actual: #f5f3f0;
+    --color-nav-text: #3E2723;
+    --color-header-border: rgba(44, 24, 16, 0.1);
+}
+
+html[data-color-theme="gold"] {
+    --color-header-actual: #E0A151;
+    --color-nav-text: #ffffff;
+    --color-header-border: transparent;
+}
+
+html[data-color-theme="blue"] {
+    --color-header-actual: #4259BD;
+    --color-nav-text: #ffffff;
+    --color-header-border: transparent;
+}
+
+html[data-color-theme="darkblue"] {
+    --color-header-actual: #263A84;
+    --color-nav-text: #ffffff;
+    --color-header-border: transparent;
+}
+
+html[data-color-theme="lime"] {
+    --color-header-actual: #B0CB37;
+    --color-nav-text: #3E2723;
+    --color-header-border: transparent;
+}
+
+html[data-color-theme="teal"] {
+    --color-header-actual: #7ea4ab;
+    --color-nav-text: #ffffff;
+    --color-header-border: transparent;
+}
+
+html[data-color-theme="orange"] {
+    --color-header-actual: #e07431;
+    --color-nav-text: #ffffff;
+    --color-header-border: transparent;
+}
+
+html[data-color-theme="berry"] {
+    --color-header-actual: #A8454F;
+    --color-nav-text: #ffffff;
+    --color-header-border: transparent;
+}
+
+/* ================================
+   Theme Picker UI
+   ================================ */
+.theme-picker {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.theme-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    background-clip: padding-box;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-swatch:hover {
+    transform: scale(1.25);
+}
+
+.theme-swatch.active {
+    border-color: var(--color-nav-text);
+    transform: scale(1.15);
+}
+
+/* Swatch dot colours */
+.theme-swatch[data-color-theme="default"] { background: #f5f3f0; box-shadow: inset 0 0 0 1px #bbb; }
+.theme-swatch[data-color-theme="gold"]     { background: #E0A151; }
+.theme-swatch[data-color-theme="blue"]     { background: #4259BD; }
+.theme-swatch[data-color-theme="darkblue"] { background: #263A84; }
+.theme-swatch[data-color-theme="lime"]     { background: #B0CB37; }
+.theme-swatch[data-color-theme="teal"]     { background: #7ea4ab; }
+.theme-swatch[data-color-theme="orange"]   { background: #e07431; }
+.theme-swatch[data-color-theme="berry"]    { background: #A8454F; }
