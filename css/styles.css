@@ -820,7 +820,7 @@ a:hover {
 /* Desktop - Hero + Two Columns */
 @media (min-width: 768px) {
     .featured-projects {
-        padding: 60px 0 80px;
+        padding: 40px 0 60px;
     }
     
     .featured-hero {
@@ -828,7 +828,8 @@ a:hover {
     }
     
     .featured-card-hero .featured-image {
-        aspect-ratio: 21 / 9;
+        aspect-ratio: 16 / 7;
+        max-height: 420px;
     }
     
     .featured-card-hero .featured-label {
