@@ -288,6 +288,7 @@ a:hover {
         float: none;
         clear: none;
         margin: 0;
+        z-index: 20;
     }
 }
 
@@ -412,7 +413,6 @@ a:hover {
    ================================ */
 .tools-section {
     padding: 80px 20px;
-    clear: both;
     position: relative;
 }
 
@@ -467,7 +467,6 @@ a:hover {
     padding: 80px 20px;
     background-color: #f9f8f6;
     margin: 60px 0;
-    clear: both;
     position: relative;
 }
 
