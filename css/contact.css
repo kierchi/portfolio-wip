@@ -747,12 +747,26 @@ a:hover {
     }
     
     /* Card tilts */
+    @keyframes head-tilt {
+        0%   { transform: rotate(1deg); }
+        12%  { transform: rotate(-2.5deg); }
+        24%  { transform: rotate(1deg); }
+        36%  { transform: rotate(3.5deg); }
+        48%  { transform: rotate(1deg); }
+        60%  { transform: rotate(-1.5deg); }
+        72%  { transform: rotate(1deg); }
+        84%  { transform: rotate(2.5deg); }
+        100% { transform: rotate(1deg); }
+    }
+
     .info-card {
         transform: rotate(1deg);
+        transform-origin: bottom center;
         transition: transform 0.4s ease;
     }
     .info-card:hover {
-        transform: rotate(0deg);
+        animation: head-tilt 3s ease-in-out 1 forwards;
+        transform-origin: bottom center;
     }
 
     /* Postcard - Side by Side Layout */
