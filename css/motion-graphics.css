@@ -179,7 +179,9 @@ a:hover {
 .hero-media video,
 .hero-media img {
     width: 100%;
-    height: auto;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -520,7 +522,12 @@ a:hover {
     .hero-media {
         margin-bottom: 50px;
     }
-    
+
+    .hero-media video,
+    .hero-media img {
+        height: 560px;
+    }
+
     /* Intro Section - Two Column Layout */
     .intro-section {
         display: grid;
