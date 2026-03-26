@@ -1,4 +1,27 @@
 /* ================================
+   Custom Fonts
+   ================================ */
+@font-face {
+    font-family: 'AcierBATText-Gris';
+    src: url('../fonts/Acier BAT Text Gris.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Acier BAT';
+    src: url('../fonts/Acier BAT Text Solid.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AcierBATText-Solid';
+    src: url('../fonts/Acier BAT Text Solid.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Sepian';
+    src: url('../fonts/Sepian.ttf') format('truetype');
+}
+
+/* ================================
    CSS Variables & Reset
    ================================ */
 :root {
@@ -281,8 +304,186 @@ a:hover {
 }
 
 /* ================================
+   Moodboard + Palette Row
+   ================================ */
+.moodboard-palette-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.moodboard-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .moodboard-palette-row {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        gap: var(--gutter);
+    }
+
+    .moodboard-palette-row .moodboard-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .moodboard-palette-row .moodboard-image {
+        flex: 1;
+    }
+
+    .moodboard-palette-row .moodboard-image img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .moodboard-palette-row .color-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .moodboard-palette-row .color-palette {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 8px;
+    }
+
+    .moodboard-palette-row .color-swatch {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .moodboard-palette-row .swatch-color {
+        flex: 1;
+        aspect-ratio: unset;
+        min-height: 0;
+        margin-bottom: 6px;
+    }
+}
+
+/* ================================
+   Typography Section
+   ================================ */
+.typography-section .type-specimens {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.type-specimen {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 20px;
+}
+
+.type-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+}
+
+.type-example {
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.type-display {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-family: 'AcierBATText-Solid', 'Acier BAT', serif;
+}
+
+.type-body {
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.type-note {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .typography-section .type-specimens {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .type-specimen {
+        flex: 1;
+    }
+
+    .type-display {
+        font-size: 64px;
+    }
+}
+
+/* ================================
    Logo Variations
    ================================ */
+.variation-light {
+    background-color: #f5f3f0;
+}
+
+.variation-dark {
+    background-color: #051F22;
+}
+
+.variation-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.variation-dark .variation-label {
+    color: #ffffff;
+}
+
+.logo-palette {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-palette-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    white-space: nowrap;
+}
+
+.logo-palette-swatches {
+    display: flex;
+    gap: 8px;
+}
+
+.logo-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
 .logo-variations-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -550,11 +751,14 @@ a:hover {
         display: grid;
         grid-template-columns: 5fr 8fr;
         gap: var(--gutter);
-        align-items: start;
+        align-items: stretch;
     }
-    
+
     .intro-section .section-header {
         margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .intro-section .section-header h2 {
@@ -579,17 +783,10 @@ a:hover {
         font-size: 16px;
     }
     
-    /* Color Palette - Horizontal */
-    .color-palette {
-        grid-template-columns: repeat(5, 1fr);
-        gap: var(--gutter);
-        max-width: 900px;
-    }
-    
     .swatch-color {
         aspect-ratio: 1;
     }
-    
+
     .swatch-info {
         font-size: 14px;
     }
