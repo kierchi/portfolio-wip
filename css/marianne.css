@@ -177,7 +177,9 @@ a:hover {
 
 .hero-image img {
     width: 100%;
-    height: auto;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* ================================
@@ -195,49 +197,100 @@ a:hover {
 }
 
 /* Intro Section */
-.intro-section .section-header {
-    background-color: var(--color-accent);
-    color: var(--color-text-light);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-}
-
-.intro-section .section-header h2 {
-    font-size: 20px;
+.intro-eyebrow {
+    font-size: 12px;
     font-weight: 700;
-    margin-bottom: 4px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 12px;
 }
 
-.intro-section .section-subtitle {
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-.intro-section .section-content p {
-    margin-bottom: 16px;
+.intro-section p {
     font-size: 15px;
     line-height: 1.7;
+    margin-bottom: 14px;
 }
 
-.intro-section .section-content p:last-child {
+.intro-section p:last-child {
     margin-bottom: 0;
 }
 
-/* Concept Section */
-.concept-image {
-    margin-bottom: 20px;
+/* Evolution Section (First Concept + Logo Variations) */
+.evolution-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+    align-items: start;
 }
 
-.concept-image img {
+.evolution-item {
+    margin: 0;
+}
+
+.evolution-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #e0ddd8;
+    cursor: pointer;
+}
+
+.evolution-item img {
     width: 100%;
     height: auto;
-    border-radius: 4px;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.concept-description p {
+.evolution-img:hover img {
+    transform: scale(1.03);
+}
+
+.zoom-hint {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(31, 57, 153, 0.75);
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.evolution-img:hover .zoom-hint {
+    opacity: 1;
+}
+
+.clickable-item {
+    cursor: pointer;
+}
+
+.evolution-item figcaption {
+    padding-top: 12px;
+}
+
+.evolution-item figcaption h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--color-text);
+}
+
+.evolution-item figcaption p {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.section-caption {
     font-size: 15px;
     line-height: 1.7;
+    margin-bottom: 20px;
+    opacity: 0.8;
 }
 
 /* ================================
@@ -510,44 +563,19 @@ a:hover {
     .hero-image {
         margin-bottom: 50px;
     }
-    
-    /* Intro Section - Two Column Layout */
-    .intro-section {
-        display: grid;
-        grid-template-columns: 5fr 8fr;
-        gap: var(--gutter);
-        align-items: start;
+
+    .hero-image img {
+        height: 560px;
     }
     
-    .intro-section .section-header {
-        margin-bottom: 0;
+    /* Intro Section */
+    .intro-eyebrow {
+        font-size: 13px;
     }
-    
-    .intro-section .section-header h2 {
-        font-size: 24px;
-    }
-    
-    .intro-section .section-subtitle {
+
+    .intro-section p {
         font-size: 16px;
-    }
-    
-    .intro-section .section-content p {
-        font-size: 16px;
-    }
-    
-    /* Concept Section - Two Column */
-    .project-section:has(.concept-image) {
-        display: grid;
-        grid-template-columns: 5fr 8fr;
-        gap: var(--gutter);
-    }
-    
-    .project-section:has(.concept-image) .section-title {
-        grid-column: 1 / -1;
-    }
-    
-    .concept-image {
-        margin-bottom: 0;
+        max-width: 720px;
     }
     
     /* Color Palette - Horizontal */
