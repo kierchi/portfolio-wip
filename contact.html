@@ -15,6 +15,7 @@
     <script src="js/theme.js"></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
@@ -44,7 +45,7 @@
         </div>
     </header>
 
-    <main class="contact-page">
+    <main id="main-content" class="contact-page">
         <div class="container">
             <!-- Page Title -->
             <h1 class="page-title">Wanna get in contact? Send me a postcard!</h1>
@@ -59,6 +60,7 @@
 
                     <!-- Message Side (Left on Desktop, Top on Mobile) -->
                     <div class="postcard-message">
+                        <label for="message" class="visually-hidden">Message</label>
                         <textarea
                             id="message"
                             name="message"
@@ -88,7 +90,7 @@
 
                             <div class="form-group">
                                 <label for="phone">Phone Number:</label>
-                                <input type="tel" id="phone" name="phone">
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                             </div>
                             
                             <!-- Submit Button -->

@@ -53,7 +53,12 @@
             // Dropdown panel
             var dropdown = document.createElement('div');
             dropdown.className = 'theme-dropdown';
-            swatchEls.forEach(function (s) { dropdown.appendChild(s); });
+            swatchEls.forEach(function (s) {
+                if (!s.getAttribute('aria-label') && s.getAttribute('title')) {
+                    s.setAttribute('aria-label', s.getAttribute('title') + ' theme');
+                }
+                dropdown.appendChild(s);
+            });
 
             picker.appendChild(trigger);
             picker.appendChild(dropdown);
