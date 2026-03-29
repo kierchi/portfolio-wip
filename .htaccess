@@ -1,0 +1,4 @@
+# Force browsers to always check for fresh JS and CSS files
+<FilesMatch "\.(js|css)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
