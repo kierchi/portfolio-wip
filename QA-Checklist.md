@@ -2,7 +2,7 @@ QA Testing Checklist - Portfolio Website
 
 Project: Kaila Wong Portfolio  
 URL: https://phowongraphy.ca  
-GitHub Repo: https://github.com/kierchi/portfolio-ver-4  
+GitHub Repo: https://kierchi.github.io/portfolio-wip/  
 Date: March 27, 2026  
 Tester: Kaila Wong  
 Issue Tracker: GitHub Issues  
