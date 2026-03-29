@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:claude.ai)",
-      "Bash(grep -E \"\\\\.\\(html|css\\)$\")"
+      "Bash(grep -E \"\\\\.\\(html|css\\)$\")",
+      "Bash(file images/**/*.webp)",
+      "Bash(identify images/**/*)",
+      "Read(//f/TERM 4/Portfolio 2/portfolio ver 10/**)"
     ]
   }
 }
