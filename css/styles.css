@@ -61,7 +61,7 @@ a:hover {
    ================================ */
 .header {
     background-color: var(--color-header-actual);
-    padding: 20px 0;
+    padding: 15px 0;
     border-bottom: 1px solid rgba(44, 24, 16, 0.1);
     position: sticky;
     top: 0;
@@ -86,7 +86,7 @@ a:hover {
 .nav-desktop {
     display: none;
     gap: 40px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .nav-desktop a {
@@ -181,53 +181,41 @@ a:hover {
     to   { transform: translateX(calc(100vw + 120px)); }
 }
 
-@keyframes plane-wave {
-    0%    { transform: translateY(0px)   rotate(-11deg); }
-    12.5% { transform: translateY(-21px) rotate(-8deg);  }
-    25%   { transform: translateY(-30px) rotate(0deg);   }
-    37.5% { transform: translateY(-21px) rotate(8deg);   }
-    50%   { transform: translateY(0px)   rotate(11deg);  }
-    62.5% { transform: translateY(21px)  rotate(8deg);   }
-    75%   { transform: translateY(30px)  rotate(0deg);   }
-    87.5% { transform: translateY(21px)  rotate(-8deg);  }
-    100%  { transform: translateY(0px)   rotate(-11deg); }
-}
-
 .plane {
     position: absolute;
     color: #8B6552;
     animation: plane-fly-x linear infinite;
+    will-change: transform;
 }
 
 .plane-y {
     display: flex;
     align-items: center;
-    animation: plane-wave linear infinite;
 }
 
 .plane-1 { top: 8%;  animation-duration: 11s; animation-delay: -2s;  opacity: 0.45; }
-.plane-1 .plane-y { animation-duration: 2.2s; }
+.plane-1 .plane-y { transform: rotate(-4deg); }
 
 .plane-2 { top: 24%; animation-duration: 13s; animation-delay: -8s;  opacity: 0.35; }
-.plane-2 .plane-y { animation-duration: 3.0s; }
+.plane-2 .plane-y { transform: rotate(2deg); }
 
 .plane-3 { top: 40%; animation-duration: 10s; animation-delay: -4s;  opacity: 0.5;  }
-.plane-3 .plane-y { animation-duration: 2.5s; }
+.plane-3 .plane-y { transform: rotate(-7deg); }
 
 .plane-4 { top: 58%; animation-duration: 14s; animation-delay: -11s; opacity: 0.4;  }
-.plane-4 .plane-y { animation-duration: 2.0s; }
+.plane-4 .plane-y { transform: rotate(5deg); }
 
 .plane-5 { top: 74%; animation-duration: 9s;  animation-delay: -1s;  opacity: 0.38; }
-.plane-5 .plane-y { animation-duration: 2.8s; }
+.plane-5 .plane-y { transform: rotate(-2deg); }
 
 .plane-6 { top: 17%; animation-duration: 12s; animation-delay: -13s; opacity: 0.3;  }
-.plane-6 .plane-y { animation-duration: 3.2s; }
+.plane-6 .plane-y { transform: rotate(6deg); }
 
 .plane-7 { top: 53%; animation-duration: 11s; animation-delay: -6s;  opacity: 0.45; }
-.plane-7 .plane-y { animation-duration: 2.3s; }
+.plane-7 .plane-y { transform: rotate(-5deg); }
 
 .plane-8 { top: 87%; animation-duration: 15s; animation-delay: -9s;  opacity: 0.32; }
-.plane-8 .plane-y { animation-duration: 2.6s; }
+.plane-8 .plane-y { transform: rotate(3deg); }
 
 /* Content container on top of background */
 .hero-container {
@@ -666,7 +654,7 @@ a:hover {
     }
     
     .container {
-        max-width: 1200px;
+        max-width: 1400px;
     }
     
     /* Show desktop nav, hide mobile menu */
@@ -886,7 +874,7 @@ a:hover {
 }
 
 .featured-label {
-    padding: 20px;
+    padding: 14px 16px;
     color: var(--color-text-light);
 }
 
@@ -914,54 +902,55 @@ a:hover {
     
     .featured-card-hero .featured-image {
         aspect-ratio: 16 / 7;
-        max-height: 420px;
+        max-height: 280px;
     }
-    
+
     .featured-card-hero .featured-label {
-        padding: 25px 30px;
+        padding: 16px 20px;
     }
-    
+
     .featured-card-hero .featured-label h3 {
-        font-size: 36px;
+        font-size: 26px;
     }
-    
+
     .featured-card-hero .featured-label p {
-        font-size: 20px;
+        font-size: 16px;
     }
-    
+
     .featured-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 20px;
     }
-    
+
     .featured-image {
         aspect-ratio: 3 / 2;
+        max-height: 200px;
     }
-    
+
     .featured-label h3 {
-        font-size: 28px;
+        font-size: 20px;
     }
-    
+
     .featured-label p {
-        font-size: 18px;
+        font-size: 15px;
     }
 }
 
 @media (min-width: 1024px) {
     .featured-card-hero .featured-label h3 {
-        font-size: 42px;
+        font-size: 30px;
     }
-    
+
     .featured-card-hero .featured-label p {
-        font-size: 22px;
+        font-size: 17px;
     }
-    
+
     .featured-label {
-        padding: 25px 30px;
+        padding: 16px 20px;
     }
-    
+
     .featured-label h3 {
-        font-size: 32px;
+        font-size: 22px;
     }
 }
 
