@@ -1,6 +1,11 @@
-# Force browsers to always check for fresh JS and CSS files
+# Cache JS and CSS for 1 day (versioned assets with ?v= query strings bust cache on update)
 <FilesMatch "\.(js|css)$">
-    Header set Cache-Control "no-cache, must-revalidate"
+    Header set Cache-Control "public, max-age=86400"
+</FilesMatch>
+
+# Cache images and fonts for 1 week
+<FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|woff2|woff)$">
+    Header set Cache-Control "public, max-age=604800"
 </FilesMatch>
 
 ErrorDocument 400 /400.html

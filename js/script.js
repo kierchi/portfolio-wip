@@ -128,10 +128,17 @@ function initPage() {
     // ================================
     const heroImg = document.querySelector('.hero-image-container img, .hero-background img');
     if (heroImg) {
+        let ticking = false;
         function updateParallax() {
             heroImg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+            ticking = false;
         }
-        window.addEventListener('scroll', updateParallax, { passive: true });
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }, { passive: true });
         updateParallax();
     }
 
@@ -247,8 +254,6 @@ function initPage() {
                 }
             });
 
-            // Add lightbox styles
-            addLightboxStyles();
         }
 
         // Show lightbox with image
@@ -261,79 +266,6 @@ function initPage() {
         }, 10);
     }
 
-    // ================================
-    // Add Lightbox Styles
-    // ================================
-    function addLightboxStyles() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .lightbox {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0);
-                z-index: 1000;
-                align-items: center;
-                justify-content: center;
-                transition: background-color 0.3s ease;
-            }
-
-            .lightbox.active {
-                background-color: rgba(0, 0, 0, 0.9);
-            }
-
-            .lightbox-content {
-                position: relative;
-                max-width: 90%;
-                max-height: 90vh;
-                opacity: 0;
-                transform: scale(0.8);
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-
-            .lightbox.active .lightbox-content {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            .lightbox-image {
-                max-width: 100%;
-                max-height: 90vh;
-                display: block;
-                border-radius: 4px;
-            }
-
-            .lightbox-close {
-                position: absolute;
-                top: -40px;
-                right: 0;
-                color: white;
-                font-size: 40px;
-                font-weight: bold;
-                cursor: pointer;
-                transition: opacity 0.3s ease;
-            }
-
-            .lightbox-close:hover {
-                opacity: 0.7;
-            }
-
-            @media (max-width: 768px) {
-                .lightbox-content {
-                    max-width: 95%;
-                }
-
-                .lightbox-close {
-                    top: -35px;
-                    font-size: 35px;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
 }
 
 // Run immediately if DOM is ready, otherwise wait for DOMContentLoaded.
