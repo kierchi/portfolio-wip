@@ -311,7 +311,7 @@ a:hover {
 }
 
 .variation-item {
-    background-color: #e0ddd8;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 4px;
     display: flex;
@@ -635,7 +635,11 @@ a:hover {
     .desktop-only {
         display: block;
     }
-    
+
+    .variation-item.desktop-only {
+        display: flex;
+    }
+
     /* Show desktop nav, hide mobile menu */
     .nav-desktop {
         display: flex;
