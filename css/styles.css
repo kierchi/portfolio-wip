@@ -37,6 +37,18 @@ video {
     display: block;
 }
 
+/* ================================
+   Paper Airplane Cursor Follower
+   ================================ */
+#cursor-plane {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    color: var(--color-accent);
+    opacity: 0.7;
+    will-change: left, top;
+}
+
 a {
     color: var(--color-link);
     text-decoration: none;

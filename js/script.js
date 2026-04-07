@@ -165,6 +165,42 @@ function initPage() {
     }
 
     // ================================
+    // Paper Airplane Cursor Follower
+    // ================================
+    if (!('ontouchstart' in window)) {
+        const plane = document.createElement('div');
+        plane.id = 'cursor-plane';
+        plane.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-linejoin="round">
+            <polygon points="22,2 2,9 11,13" fill="var(--color-bg)"/>
+            <polygon points="22,2 11,13 15,22" fill="var(--color-bg)"/>
+            <line x1="11" y1="13" x2="22" y2="2"/>
+        </svg>`;
+        document.body.appendChild(plane);
+
+        // Tip of the SVG is at (22,2) in a 24×24 viewBox at 30×30px = (27.5, 2.5)px
+        const TIP_X = 27.5;
+        const TIP_Y = 2.5;
+
+        let mouseX = -200, mouseY = -200;
+        let planeX = -200, planeY = -200;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        (function animatePlane() {
+            planeX += (mouseX - planeX) * 0.12;
+            planeY += (mouseY - planeY) * 0.12;
+
+            plane.style.left = (planeX - TIP_X) + 'px';
+            plane.style.top  = (planeY - TIP_Y) + 'px';
+
+            requestAnimationFrame(animatePlane);
+        })();
+    }
+
+    // ================================
     // Skills Box Toggle (Homepage)
     // ================================
     const skillsBox = document.querySelector('.skills-box');
