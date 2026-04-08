@@ -63,13 +63,15 @@
     overflow: hidden;
     border-radius: 4px;
     background-color: #000000;
+    height: 420px;
 }
 
 .hero-image img {
     width: 100%;
-    height: 420px;
+    height: 130%;
     object-fit: cover;
     object-position: center;
+    will-change: transform;
 }
 
 /* ================================
@@ -137,11 +139,15 @@
     margin-bottom: 20px;
     border-radius: 4px;
     overflow: hidden;
+    height: 400px;
 }
 
 .origin-image img {
     width: 100%;
-    height: auto;
+    height: 130%;
+    object-fit: cover;
+    object-position: center;
+    will-change: transform;
 }
 
 /* ================================
@@ -488,9 +494,6 @@
     /* Hero Image */
     .hero-image {
         margin-bottom: 50px;
-    }
-
-    .hero-image img {
         height: 560px;
     }
 
@@ -551,10 +554,18 @@
     /* Mockup Grid - 2 Columns */
     .mockup-grid.grid-2 {
         grid-template-columns: repeat(2, 1fr);
+        align-items: stretch;
     }
-    
-    .mockup-item {
+
+    .mockup-grid.grid-2 .mockup-item {
         padding: 30px;
+    }
+
+    .mockup-grid.grid-2 .mockup-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
     
     /* Project Navigation */

@@ -191,7 +191,9 @@
 
 .concept-art-item img {
     width: 100%;
-    height: auto;
+    height: 420px;
+    object-fit: cover;
+    object-position: top;
     border-radius: 4px;
 }
 
@@ -646,19 +648,18 @@
     transform: scale(0.98);
 }
 
-/* Desktop - 3x2 Grid Layout */
+/* Desktop - 6x1 Single Row Layout */
 @media (min-width: 768px) {
     .app-screens-scroll {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns */
-        gap: 30px;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
         overflow-x: visible;
-        margin: 0;
         padding: 40px 0;
         max-width: 1200px;
         margin: 0 auto;
     }
-    
+
     .phone-mockup {
         width: 100%;
         scroll-snap-align: unset;
@@ -667,11 +668,11 @@
 
 @media (min-width: 1024px) {
     .app-screens-scroll {
-        gap: 40px; /* Just increase gap, keep 3 columns */
+        gap: 20px;
     }
-    
+
     .phone-mockup img {
-        border-radius: 42px; /* Larger rounded corners on desktop */
+        border-radius: 28px;
     }
 }
 

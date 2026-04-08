@@ -53,6 +53,12 @@
             // Dropdown panel
             var dropdown = document.createElement('div');
             dropdown.className = 'theme-dropdown';
+
+            var label = document.createElement('span');
+            label.className = 'theme-dropdown-label';
+            label.textContent = 'Choose a colour';
+            dropdown.appendChild(label);
+
             swatchEls.forEach(function (s) {
                 if (!s.getAttribute('aria-label') && s.getAttribute('title')) {
                     s.setAttribute('aria-label', s.getAttribute('title') + ' theme');

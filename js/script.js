@@ -40,7 +40,7 @@ function initPage() {
             { text: 'Works', href: 'works.html' },
             { text: 'About', href: 'about.html' },
             { text: 'Contact', href: 'contact.html' },
-            { text: 'Resume', href: 'files/KailaWongResume.pdf', target: '_blank' }
+            { text: 'Resume', href: 'files/KailaWongResume_Simple.pdf', target: '_blank' }
         ];
 
         links.forEach(link => {
@@ -170,10 +170,10 @@ function initPage() {
     if (!('ontouchstart' in window)) {
         const plane = document.createElement('div');
         plane.id = 'cursor-plane';
-        plane.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-linejoin="round">
-            <polygon points="22,2 2,9 11,13" fill="var(--color-bg)"/>
-            <polygon points="22,2 11,13 15,22" fill="var(--color-bg)"/>
-            <line x1="11" y1="13" x2="22" y2="2"/>
+        plane.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="2,2 22,9 13,13" fill="var(--color-bg)"/>
+            <polygon points="2,2 13,13 9,22" fill="var(--color-bg)"/>
+            <line x1="13" y1="13" x2="2" y2="2"/>
         </svg>`;
         document.body.appendChild(plane);
 
@@ -183,6 +183,7 @@ function initPage() {
 
         let mouseX = -200, mouseY = -200;
         let planeX = -200, planeY = -200;
+        let angle = 0;
 
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
@@ -193,8 +194,16 @@ function initPage() {
             planeX += (mouseX - planeX) * 0.12;
             planeY += (mouseY - planeY) * 0.12;
 
+            const dx = mouseX - planeX;
+            const dy = mouseY - planeY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist > 2) {
+                angle = Math.atan2(dy, dx) * (180 / Math.PI) - 180;
+            }
+
             plane.style.left = (planeX - TIP_X) + 'px';
             plane.style.top  = (planeY - TIP_Y) + 'px';
+            plane.style.transform = `rotate(${angle}deg)`;
 
             requestAnimationFrame(animatePlane);
         })();
@@ -312,3 +321,36 @@ if (document.readyState === 'loading') {
 } else {
     initPage();
 }
+
+// Parallax effect for .hero-image and .origin-image (neon-veil page)
+(function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const parallaxEls = document.querySelectorAll('.hero-image img, .origin-image img');
+    if (!parallaxEls.length) return;
+
+    let ticking = false;
+
+    function updateParallax() {
+        parallaxEls.forEach(function (img) {
+            const container = img.parentElement;
+            const rect = container.getBoundingClientRect();
+            const viewH = window.innerHeight;
+
+            const progress = 1 - (rect.bottom / (viewH + rect.height));
+            const offset = (progress - 0.5) * 60; // ±30px shift range
+
+            img.style.transform = 'translateY(' + offset + 'px)';
+        });
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    updateParallax();
+}());

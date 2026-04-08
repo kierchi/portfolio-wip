@@ -215,6 +215,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     max-width: 500px;
+    margin: 0 auto;
+}
+
+.color-palette--2col {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 340px;
 }
 
 .color-swatch {
@@ -454,6 +460,11 @@
         gap: 16px;
         max-width: 700px;
     }
+
+    .color-palette--2col {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 340px;
+    }
     
     .swatch-color {
         aspect-ratio: 1;
@@ -564,6 +575,10 @@
 .logo-project-1 .font-example,
 .logo-project-1 .font-numbers {
     font-family: 'LogoFont1', Arial, sans-serif;
+}
+
+.logo-project-2 .main-logo-display img {
+    max-width: 55%;
 }
 
 .logo-project-2 .font-example,
