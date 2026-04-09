@@ -316,7 +316,7 @@ a:hover {
 }
 
 .hero-text p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 14px;
     color: var(--color-text);
@@ -354,7 +354,7 @@ a:hover {
 }
 
 .skills-column ul li {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
     padding-left: 18px;
     position: relative;
@@ -523,6 +523,43 @@ a:hover {
 
 
 /* ================================
+   Works Filter Bar
+   ================================ */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.filter-btn {
+    padding: 7px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid var(--color-border, #4259BD);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: var(--color-border, #4259BD);
+    color: #ffffff;
+}
+
+.filter-btn.active {
+    background: var(--color-border, #4259BD);
+    color: #ffffff;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+/* ================================
    Projects Section
    ================================ */
 .projects-section {
@@ -562,6 +599,8 @@ a:hover {
 .project-card {
     background: white;
     overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
@@ -587,7 +626,7 @@ a:hover {
 
 .project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .project-image {
@@ -595,6 +634,7 @@ a:hover {
     aspect-ratio: 4/3;
     overflow: hidden;
     background-color: #e0ddd8;
+    border-radius: 0;
 }
 
 .project-image img {
@@ -620,7 +660,7 @@ a:hover {
     opacity: 0.6;
 }
 
-/* Project Label */
+/* Project Label (legacy) */
 .project-label {
     padding: 16px 20px;
     color: white;
@@ -633,9 +673,58 @@ a:hover {
 }
 
 .project-label p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     opacity: 0.95;
+}
+
+/* ================================
+   Project Card Body — Detailed Layout
+   ================================ */
+.project-body {
+    padding: 16px 20px 20px;
+    background: #ffffff;
+}
+
+.project-category {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.project-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
+    opacity: 0.8;
+    margin-bottom: 14px;
+}
+
+.project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tool-tag {
+    font-size: 13px;
+    background: #f5f3f0;
+    color: var(--color-text);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 /* ================================
@@ -667,7 +756,7 @@ a:hover {
 }
 
 .footer p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--color-text);
 }
 
@@ -706,18 +795,22 @@ a:hover {
         margin-bottom: 50px;
     }
     
-    /* Projects Grid - 3 Columns */
+    /* Projects Grid - 2 Columns on tablet */
     .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--gutter);
     }
-    
+
     .project-label h3 {
         font-size: 22px;
     }
-    
+
     .project-label p {
-        font-size: 15px;
+        font-size: 16px;
+    }
+
+    .project-title {
+        font-size: 22px;
     }
     
     .end-message p {
@@ -834,12 +927,184 @@ a:hover {
    ================================ */
 @media (min-width: 1024px) {
     .projects-section {
-        padding: 60px 0 80px; /* Back to original */
+        padding: 60px 0 80px;
     }
-    
+
     .section-title {
         font-size: 56px;
         margin-bottom: 60px;
+    }
+
+    /* Projects Grid - 3 Columns on desktop */
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ================================
+   Featured Postcard Cards
+   ================================ */
+.featured-list {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 24px;
+}
+
+.featured-postcard {
+    position: relative;
+    background-color: var(--color-postcard, #faf8f3);
+    border: 8px solid;
+    border-image: repeating-linear-gradient(
+        -45deg,
+        #c0392b 0px, #c0392b 6px,
+        #ffffff 6px, #ffffff 12px,
+        #1e3a8a 12px, #1e3a8a 18px,
+        #ffffff 18px, #ffffff 24px
+    ) 8;
+    overflow: visible;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-postcard:nth-child(1) { transform: rotate(-1.5deg); }
+.featured-postcard:nth-child(2) { transform: rotate(1.5deg); }
+.featured-postcard:nth-child(3) { transform: rotate(-1deg); }
+
+.featured-postcard:hover {
+    transform: rotate(0deg) translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Paperclip */
+.postcard-clip {
+    position: absolute;
+    top: -36px;
+    left: 52px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.featured-postcard > a {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.featured-postcard > a:hover {
+    opacity: 1;
+}
+
+/* Image panel — left */
+.postcard-image {
+    width: 42%;
+    flex-shrink: 0;
+    overflow: hidden;
+    padding: 14px;
+    background: #ffffff;
+}
+
+.postcard-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.featured-postcard:hover .postcard-image img {
+    transform: scale(1.05);
+}
+
+/* Divider line between image and info */
+.postcard-divider {
+    width: 1px;
+    background-color: rgba(62, 39, 35, 0.18);
+    flex-shrink: 0;
+    margin: 0;
+}
+
+/* Info panel — right */
+.postcard-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    border-left: 1px solid rgba(62, 39, 35, 0.18);
+}
+
+.postcard-title-bar {
+    padding: 20px 24px 14px;
+    color: #ffffff;
+}
+
+.postcard-title-bar h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Ruled-paper body */
+.postcard-body {
+    flex: 1;
+    padding: 16px 24px 20px;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        rgba(62, 39, 35, 0.1) 31px,
+        rgba(62, 39, 35, 0.1) 32px
+    );
+    background-size: 100% 32px;
+    background-position: 0 17px;
+}
+
+.postcard-category {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text);
+    opacity: 0.55;
+    line-height: 32px;
+    margin-bottom: 0;
+}
+
+.postcard-description {
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--color-text);
+}
+
+.postcard-tools {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    opacity: 0.65;
+    padding: 14px 24px 20px;
+    border-top: 1px solid rgba(62, 39, 35, 0.12);
+}
+
+/* Mobile: stack image above text */
+@media (max-width: 560px) {
+    .featured-postcard > a {
+        flex-direction: column;
+    }
+
+    .postcard-image {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+    }
+
+    .postcard-divider {
+        width: auto;
+        height: 1px;
+        margin: 0 12px;
     }
 }
 
@@ -966,7 +1231,7 @@ a:hover {
     }
 
     .featured-label p {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 

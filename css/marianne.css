@@ -81,7 +81,7 @@
 }
 
 .intro-section p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
     margin-bottom: 14px;
 }
@@ -148,7 +148,7 @@
 }
 
 .evolution-item figcaption h3 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 4px;
     color: var(--color-text);
@@ -161,7 +161,7 @@
 }
 
 .section-caption {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
     margin-bottom: 20px;
     opacity: 0.8;
@@ -327,7 +327,7 @@
     }
     
     .swatch-info {
-        font-size: 14px;
+        font-size: 16px;
     }
     
     /* Image Grids */

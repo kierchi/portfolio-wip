@@ -50,83 +50,126 @@
             <div class="container">
                 <h1 class="section-title">Works</h1>
 
+                <div class="filter-bar" role="group" aria-label="Filter by category">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                    <button class="filter-btn" data-filter="game-design">Game Design</button>
+                    <button class="filter-btn" data-filter="logo-design">Logo Design</button>
+                    <button class="filter-btn" data-filter="animation">Animation</button>
+                    <button class="filter-btn" data-filter="mixed-media">Mixed Media</button>
+                </div>
+
                 <div class="projects-grid">
                     <!-- Teeny Me -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="game-design">
                         <a href="teeny-me.html">
                             <div class="project-image">
                                 <img src="images/tm/Home Page.webp" loading="lazy" alt="Teeny Me - A Dress Up Game" width="852" height="393"/>
                             </div>
-                            <div class="project-label" style="background-color: #A8454F;">
-                                <h3>Teeny Me</h3>
-                                <p>A Dress Up Game</p>
+                            <div class="project-body">
+                                <span class="project-category" style="color: #A8454F;">Game Design Concept</span>
+                                <h3 class="project-title">Teeny Me</h3>
+                                <p class="project-description">Character-driven dress-up game featuring avatar customization, outfit mixing, and creative expression in a wholesome, playful environment.</p>
+                                <div class="project-tools">
+                                    <span class="tool-tag">Procreate</span>
+                                    <span class="tool-tag">Photoshop</span>
+                                    <span class="tool-tag">Figma</span>
+                                </div>
                             </div>
                         </a>
                     </article>
 
                     <!-- Neon Veil -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="branding">
                         <a href="neon-veil.html">
                             <div class="project-image">
                                 <img src="images/nv/lightshow-hero.webp" loading="lazy" alt="Neon Veil - A Music Collective" width="2500" height="1667"/>
                             </div>
-                            <div class="project-label" style="background-color: #99B6BB;">
-                                <h3>NEØN VEIL</h3>
-                                <p>A Music Collective</p>
+                            <div class="project-body">
+                                <span class="project-category" style="color: #99B6BB;">Branding &amp; Visual Identity</span>
+                                <h3 class="project-title">NEØN VEIL</h3>
+                                <p class="project-description">Brand identity for an underground electronic music collective, celebrating rave culture through bold neon aesthetics and expressive typography.</p>
+                                <div class="project-tools">
+                                    <span class="tool-tag">Illustrator</span>
+                                    <span class="tool-tag">Photoshop</span>
+                                </div>
                             </div>
                         </a>
                     </article>
 
                     <!-- Marianne's Tea -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="branding">
                         <a href="marianne.html">
                             <div class="project-image">
                                 <img src="images/mpt/mpt stamp.webp" loading="lazy" alt="Marianne's Tea - A Tea Company" width="2550" height="3300"/>
                             </div>
-                            <div class="project-label" style="background-color: #263A84;">
-                                <h3>Marianne's Tea</h3>
-                                <p>A Tea Company</p>
+                            <div class="project-body">
+                                <span class="project-category" style="color: #263A84;">Branding &amp; Packaging</span>
+                                <h3 class="project-title">Marianne's Tea</h3>
+                                <p class="project-description">Brand identity and packaging design for a boutique tea company, blending elegant typography with botanical illustration and warm earthy tones.</p>
+                                <div class="project-tools">
+                                    <span class="tool-tag">Illustrator</span>
+                                    <span class="tool-tag">Photoshop</span>
+                                    <span class="tool-tag">InDesign</span>
+                                </div>
                             </div>
                         </a>
                     </article>
 
                     <!-- Logofolio -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="logo-design">
                         <a href="logofolio.html">
                             <div class="project-image">
                                 <img src="images/logo/KW-PL-BrownGold.svg" loading="lazy" alt="Logofolio Showcase" />
                             </div>
-                            <div class="project-label" style="background-color: #e07431;">
-                                <h3>Logofolio</h3>
-                                <p>Showcase</p>
+                            <div class="project-body">
+                                <span class="project-category" style="color: #e07431;">Logo Design</span>
+                                <h3 class="project-title">Logofolio</h3>
+                                <p class="project-description">Collection of logo concepts exploring brand identity through typography, symbolism, and visual mark design across various industries.</p>
+                                <div class="project-tools">
+                                    <span class="tool-tag">Illustrator</span>
+                                </div>
                             </div>
                         </a>
                     </article>
 
                     <!-- Motion Graphics -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="animation">
                         <a href="motion-graphics.html">
                             <div class="project-image">
                                 <img src="images/vid/videoframe_horse.webp" loading="lazy" alt="Motion Graphics Showcase" width="540" height="300"/>
                             </div>
-                            <div class="project-label" style="background-color: #B0CB37;">
-                                <h3>Motion Graphics</h3>
-                                <p>Showcase</p>
+                            <div class="project-body">
+                                <span class="project-category" style="color: #B0CB37;">Animation &amp; Video Editing</span>
+                                <h3 class="project-title">Motion Graphics</h3>
+                                <p class="project-description">Animated character concepts and dynamic visual storytelling showcasing motion design skills and creative video editing techniques.</p>
+                                <div class="project-tools">
+                                    <span class="tool-tag">After Effects</span>
+                                    <span class="tool-tag">Premiere Pro</span>
+                                    <span class="tool-tag">Photoshop</span>
+                                </div>
                             </div>
                         </a>
                     </article>
 
                     <!-- Miscellaneous -->
-                    <article class="project-card project-placeholder">
+                    <article class="project-card project-placeholder" data-category="mixed-media">
                         <a href="misc.html">
                             <div class="project-image">
                                 <div class="placeholder-content">
                                     <img src="images/miscmisc/miscthumbnail.webp" loading="lazy" alt="Colourful Scribble" width="2048" height="2048"/>
                                 </div>
                             </div>
-                            <div class="project-label" style="background-color: #E0A151;">
-                                <h3>Miscellaneous</h3>
-                                <p>Random Items</p>
+                            <div class="project-body">
+                                <span class="project-category" style="color: #E0A151;">Mixed Media &amp; Photography</span>
+                                <h3 class="project-title">Misc Gallery</h3>
+                                <p class="project-description">Curated collection of photography, illustrations, and experimental designs showcasing creative exploration and visual storytelling.</p>
+                                <div class="project-tools">
+                                    <span class="tool-tag">Photoshop</span>
+                                    <span class="tool-tag">InDesign</span>
+                                    <span class="tool-tag">Clip Studio Paint</span>
+                                    <span class="tool-tag">Procreate</span>
+                                </div>
                             </div>
                         </a>
                     </article>

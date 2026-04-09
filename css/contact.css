@@ -26,6 +26,17 @@
    ================================ */
 .contact-page {
     padding: 30px 0 60px;
+    border-top: 6px solid transparent;
+    background-image: repeating-linear-gradient(
+        90deg,
+        #c0392b 0px, #c0392b 10px,
+        #ffffff 10px, #ffffff 20px,
+        #4259BD 20px, #4259BD 30px,
+        #ffffff 30px, #ffffff 40px
+    );
+    background-size: 40px 6px;
+    background-repeat: repeat-x;
+    background-position: top left;
 }
 
 .page-title {
@@ -307,7 +318,7 @@
 }
 
 .info-message p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--color-text);

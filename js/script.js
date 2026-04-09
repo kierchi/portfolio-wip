@@ -210,6 +210,28 @@ function initPage() {
     }
 
     // ================================
+    // Works Page — Category Filter
+    // ================================
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    if (filterBtns.length) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.project-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+
+    // ================================
     // Skills Box Toggle (Homepage)
     // ================================
     const skillsBox = document.querySelector('.skills-box');
@@ -326,7 +348,7 @@ if (document.readyState === 'loading') {
 (function () {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const parallaxEls = document.querySelectorAll('.hero-image img, .origin-image img');
+    const parallaxEls = document.querySelectorAll('.origin-image img');
     if (!parallaxEls.length) return;
 
     let ticking = false;

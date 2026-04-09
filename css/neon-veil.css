@@ -63,15 +63,13 @@
     overflow: hidden;
     border-radius: 4px;
     background-color: #000000;
-    height: 420px;
 }
 
 .hero-image img {
     width: 100%;
-    height: 130%;
+    height: 420px;
     object-fit: cover;
     object-position: center;
-    will-change: transform;
 }
 
 /* ================================
@@ -93,7 +91,7 @@
 }
 
 .section-description p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
     margin-bottom: 16px;
 }
@@ -118,13 +116,13 @@
 }
 
 .intro-section .section-subtitle {
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0.9;
 }
 
 .intro-section .section-content p {
     margin-bottom: 16px;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -309,7 +307,7 @@
 }
 
 .type-note {
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0.7;
     line-height: 1.6;
 }
@@ -494,6 +492,9 @@
     /* Hero Image */
     .hero-image {
         margin-bottom: 50px;
+    }
+
+    .hero-image img {
         height: 560px;
     }
 
@@ -539,7 +540,7 @@
     }
 
     .swatch-info {
-        font-size: 14px;
+        font-size: 16px;
     }
     
     /* Logo Variations - 2 Columns */
